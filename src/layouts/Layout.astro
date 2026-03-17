@@ -1,0 +1,65 @@
+---
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+export interface Props {
+  title: string;
+  description?: string;
+  currentPage?: string;
+}
+
+const {
+  title,
+  description = 'Elevate CNC — Industrial CNC Machinery, Sales & Service. CNC Routers, Plasma Tables & Laser Systems. Shelley, ID.',
+  currentPage = '/',
+} = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content={description} />
+  <title>{title} | Elevate CNC</title>
+  <link rel="icon" type="image/png" href="https://cdn.durable.co/logos/1fM8sswlAhoaxxwj6XLdTvuzHO2EZNMrQK77vDr17NjP9LOBkNCtlfYqOI7uCZqF.png" />
+
+</head>
+<body>
+  <Nav currentPage={currentPage} />
+  <main>
+    <slot />
+  </main>
+  <Footer />
+
+  <!-- Floating Quote CTA — hides when contact section is in view -->
+  <a href="/#contact" class="float-cta" id="float-cta" aria-label="Get a free quote">
+    💬 Get a Free Quote
+  </a>
+
+  <script>
+    // Mobile nav toggle
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+    hamburger?.addEventListener('click', () => {
+      navLinks?.classList.toggle('open');
+    });
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const answer = btn.nextElementSibling;
+        const isOpen = btn.classList.contains('open');
+        document.querySelectorAll('.faq-question').forEach(b => {
+          b.classList.remove('open');
+          b.nextElementSibling?.classList.remove('open');
+        });
+        if (!isOpen) {
+          btn.classList.add('open');
+          answer?.classList.add('open');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

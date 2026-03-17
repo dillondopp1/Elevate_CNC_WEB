@@ -1,0 +1,518 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const softwareLogos = [
+  { src: 'https://cdn.durable.co/blocks/16ZtjAyXRoj7A1rrXqVMs93rIG1LUStWaBINuGh186Qs1U3rCVwkhpVPtdrhJAa4.png', alt: 'Fusion 360' },
+  { src: 'https://cdn.durable.co/blocks/2djwOEoce7jz8tp2TyJLNFyppITdcTrL8UTNG3jraPrqzgdWXS5bESTBdoJ3cNvf.png', alt: 'VCarve Pro' },
+  { src: 'https://cdn.durable.co/blocks/6YRVX1So3Hgdzen2Eaexz8J5GOqE1Ce63EP3Z3vXtj25JFTBlfdyG8V0YXs6TWqZ.png', alt: 'SheetCAM' },
+  { src: 'https://cdn.durable.co/blocks/aRwZsJlvpbMR2sxpaAy4xuYg8Zg3pkMfbi4OjPI0juoEk1kFZXUFw4jv6KL9FH9P.png', alt: 'Centroid' },
+  { src: 'https://cdn.durable.co/blocks/2d5yCoiWIP3fyfbK0CyhQbLwNDdIgy9itFWY4s6wTVapf61Fv3W5NOTOh45bhqjf.png', alt: 'Mach4' },
+];
+---
+
+<Layout title="CNC Machinery, Sales & Service" currentPage="/">
+
+  <!-- ====== HERO ====== -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content container">
+      <p class="hero-label">// Shelley, Idaho — USA Designed & Supported</p>
+      <h1 class="hero-title">CNC Machinery,<br />Sales &amp; Service</h1>
+      <p class="hero-sub">
+        Industrial-grade CNC Routers, Plasma Tables &amp; Laser Systems —
+        built for real shops, backed by real support.
+      </p>
+      <div class="hero-actions">
+        <a href="#machines" class="btn btn-primary">Shop Machines</a>
+        <a href="#contact" class="btn btn-outline">Get a Free Quote</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== STATS / SOCIAL PROOF STRIP ====== -->
+  <div class="stats-strip">
+    <div class="stats-inner container">
+      <div class="stat-item">
+        <span class="stat-num">100+</span>
+        <span class="stat-label">Machines Sold</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-num">3</span>
+        <span class="stat-label">Machine Series</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-num">🇺🇸</span>
+        <span class="stat-label">USA Built & Supported</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-num">5★</span>
+        <span class="stat-label">Customer Rating</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-num">24/7</span>
+        <span class="stat-label">Technical Support</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====== PRODUCT CATEGORIES ====== -->
+  <section class="categories" id="machines">
+    <div class="container">
+      <p class="section-label">Our Machines</p>
+      <h2 class="section-title">What Can We Build<br />For Your Shop?</h2>
+      <div class="title-rule"></div>
+      <p class="section-sub">
+        From wood routing to plasma cutting to laser engraving — we have the machine
+        and the expertise to match your production needs.
+      </p>
+      <div class="category-grid">
+        <a href="/machines#routers" class="category-card cat-router">
+          <div class="cat-bg" style="background-image: url('/images/cat-router.jpg')"></div>
+          <div class="cat-content">
+            <p class="cat-label">Machines</p>
+            <h3 class="cat-name">CNC Routers</h3>
+            <p class="cat-desc">Wood, plastics, composites &amp; aluminum</p>
+            <span class="cat-explore">Explore → </span>
+          </div>
+        </a>
+        <a href="/machines#plasma" class="category-card cat-plasma">
+          <div class="cat-bg" style="background-image: url('/images/cat-plasma.jpg')"></div>
+          <div class="cat-content">
+            <p class="cat-label">Machines</p>
+            <h3 class="cat-name">Plasma Tables</h3>
+            <p class="cat-desc">Steel, aluminum &amp; sheet metal</p>
+            <span class="cat-explore">Explore →</span>
+          </div>
+        </a>
+        <a href="/machines#lasers" class="category-card cat-laser">
+          <div class="cat-bg" style="background-image: url('/images/cat-laser.jpg')"></div>
+          <div class="cat-content">
+            <p class="cat-label">Machines</p>
+            <h3 class="cat-name">Laser Systems</h3>
+            <p class="cat-desc">Cutting &amp; engraving, CO₂ &amp; fiber</p>
+            <span class="cat-explore">Explore →</span>
+          </div>
+        </a>
+        <a href="/machines#custom" class="category-card cat-custom">
+          <div class="cat-bg" style="background-image: url('/images/cat-custom.jpg')"></div>
+          <div class="cat-content">
+            <p class="cat-label">Custom</p>
+            <h3 class="cat-name">Custom Builds</h3>
+            <p class="cat-desc">Configured to your exact specs</p>
+            <span class="cat-explore">Explore →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== FEATURED MACHINE (Summit — Most Popular) ====== -->
+  <section class="featured-machine">
+    <div class="container">
+      <div class="featured-grid">
+        <div class="featured-image">
+          <div class="featured-badge-img">Most Popular</div>
+          <!-- Replace with actual Summit Series photo -->
+          <div class="featured-placeholder">
+            <span>📷</span>
+            <p>Add Summit Series photo<br/><code>public/images/summit-series.jpg</code></p>
+          </div>
+        </div>
+        <div class="featured-content">
+          <p class="section-label">Featured Machine</p>
+          <p class="featured-series">Summit Series</p>
+          <h2 class="section-title" style="margin-bottom:8px">The Production<br />Standard</h2>
+          <div class="title-rule"></div>
+          <p style="color:var(--text-muted); font-size:0.95rem; line-height:1.8; margin-bottom:24px;">
+            Our most popular machine — built for cabinet shops, sign makers, and small manufacturers
+            who need reliable, accurate performance every single day.
+          </p>
+          <div class="featured-specs">
+            <div class="spec-item"><span class="spec-label">Spindle</span><span class="spec-val">4HP Air-Cooled</span></div>
+            <div class="spec-item"><span class="spec-label">Table</span><span class="spec-val">6-Zone Vacuum</span></div>
+            <div class="spec-item"><span class="spec-label">Vacuum</span><span class="spec-val">6HP Regenerative Pump</span></div>
+            <div class="spec-item"><span class="spec-label">Frame</span><span class="spec-val">Welded Steel</span></div>
+            <div class="spec-item"><span class="spec-label">Comm</span><span class="spec-val">Ethernet</span></div>
+            <div class="spec-item"><span class="spec-label">Price</span><span class="spec-val spec-price">From $18,400</span></div>
+          </div>
+          <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:32px;">
+            <a href="#contact" class="btn btn-primary">Get a Quote</a>
+            <a href="/machines#routers" class="btn btn-dark">View All Routers</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== HOW IT WORKS ====== -->
+  <section class="how-it-works">
+    <div class="container">
+      <p class="section-label text-center" style="display:block; text-align:center;">The Process</p>
+      <h2 class="section-title text-center">From First Call to<br />First Cut</h2>
+      <div class="title-rule" style="margin:0 auto 48px;"></div>
+      <div class="process-grid">
+        <div class="process-step">
+          <div class="process-num">01</div>
+          <h3 class="process-title">Consult</h3>
+          <p class="process-desc">
+            Tell us what you're cutting, how much, and what your shop looks like.
+            We'll match you to the right machine — no upsell, no pressure.
+          </p>
+        </div>
+        <div class="process-arrow">→</div>
+        <div class="process-step">
+          <div class="process-num">02</div>
+          <h3 class="process-title">Configure</h3>
+          <p class="process-desc">
+            Customize your machine to your exact specs. Table size, drive system,
+            spindle, software, accessories — we build it the way you need it.
+          </p>
+        </div>
+        <div class="process-arrow">→</div>
+        <div class="process-step">
+          <div class="process-num">03</div>
+          <h3 class="process-title">Deliver &amp; Run</h3>
+          <p class="process-desc">
+            We deliver, set up, and train you on your machine. Then we stay available
+            for support — because your uptime is our reputation.
+          </p>
+        </div>
+      </div>
+      <div style="text-align:center; margin-top:48px;">
+        <a href="#contact" class="btn btn-primary">Start the Conversation →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== MACHINE COMPARISON ====== -->
+  <section class="comparison" id="pricing">
+    <div class="container">
+      <p class="section-label">Compare Models</p>
+      <h2 class="section-title">CNC Router Packages</h2>
+      <div class="title-rule"></div>
+      <p class="section-sub">All packages include setup, training, software, and ongoing support.</p>
+
+      <!-- Pricing Cards -->
+      <div class="packages-grid">
+        <div class="package-card">
+          <p class="pkg-series">Ascent Series</p>
+          <h3 class="pkg-name">Starter</h3>
+          <div class="pkg-price"><span>$</span>15,000</div>
+          <p class="pkg-per">starting price &nbsp;·&nbsp; <a href="/financing" style="color:var(--accent)">Est. $304/mo</a></p>
+          <p class="pkg-desc">
+            Entry-level CNC router for hobbyists, makers, and small shops. Runs on
+            standard household power — no electrician required.
+          </p>
+          <ul class="pkg-features">
+            <li>Standard household power (110V)</li>
+            <li>Basic Setup &amp; Commissioning</li>
+            <li>Standard Tooling Package</li>
+            <li>CAD/CAM Software Included</li>
+            <li>24/7 Support &amp; Warranty</li>
+          </ul>
+          <a href="#contact" class="btn btn-dark pkg-cta">Request a Quote</a>
+        </div>
+
+        <div class="package-card popular">
+          <div class="popular-badge">Most Popular</div>
+          <p class="pkg-series">Summit Series</p>
+          <h3 class="pkg-name">Production</h3>
+          <div class="pkg-price"><span>$</span>18,400</div>
+          <p class="pkg-per">starting price &nbsp;·&nbsp; <a href="/financing" style="color:var(--accent)">Est. $373/mo</a></p>
+          <p class="pkg-desc">
+            Production-grade router for cabinet shops and sign makers who need
+            reliable daily performance and vacuum hold-down.
+          </p>
+          <ul class="pkg-features">
+            <li>4HP Air-Cooled Spindle</li>
+            <li>6-Zone Vacuum Table</li>
+            <li>6HP Regenerative Vacuum Pump</li>
+            <li>Ethernet Communication</li>
+            <li>Welded Steel Frame</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary pkg-cta">Request a Quote</a>
+        </div>
+
+        <div class="package-card">
+          <p class="pkg-series">Apex Series</p>
+          <h3 class="pkg-name">High Production</h3>
+          <div class="pkg-price"><span>$</span>40,000</div>
+          <p class="pkg-per">starting price &nbsp;·&nbsp; <a href="/financing" style="color:var(--accent)">Est. $811/mo</a></p>
+          <p class="pkg-desc">
+            Top-tier machine with full automation — built for shops where
+            speed, precision, and volume are non-negotiable.
+          </p>
+          <ul class="pkg-features">
+            <li>AC Servo Motors</li>
+            <li>12HP Auto Tool Change Spindle</li>
+            <li>Pneumatic Alignment Pins</li>
+            <li>6-Zone Vacuum Table</li>
+            <li>Integrated Dust Collection</li>
+          </ul>
+          <a href="#contact" class="btn btn-dark pkg-cta">Request a Quote</a>
+        </div>
+      </div>
+
+      <!-- Comparison Table -->
+      <div class="comp-table-wrap">
+        <p style="font-family:var(--font-head); font-weight:700; text-transform:uppercase; font-size:0.85rem; letter-spacing:0.1em; color:var(--text-muted); margin-bottom:16px;">Quick Comparison</p>
+        <table class="comp-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>Ascent <span>$15k</span></th>
+              <th class="popular-col">Summit <span>$18.4k</span></th>
+              <th>Apex <span>$40k</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Power Requirement</td><td>110V</td><td class="popular-col">220V</td><td>220V 3-Phase</td></tr>
+            <tr><td>Spindle HP</td><td>2HP</td><td class="popular-col">4HP</td><td>12HP</td></tr>
+            <tr><td>Tool Change</td><td>Manual</td><td class="popular-col">Manual</td><td>✓ Automatic</td></tr>
+            <tr><td>Vacuum Table</td><td>—</td><td class="popular-col">✓ 6-Zone</td><td>✓ 6-Zone</td></tr>
+            <tr><td>Drive System</td><td>Rack &amp; Pinion</td><td class="popular-col">Rack &amp; Pinion</td><td>AC Servo</td></tr>
+            <tr><td>Best For</td><td>Hobbyist / Maker</td><td class="popular-col">Cabinet / Sign Shop</td><td>High-Volume Mfg</td></tr>
+            <tr>
+              <td></td>
+              <td><a href="#contact" class="btn btn-dark" style="padding:10px 16px; font-size:0.8rem;">Quote</a></td>
+              <td class="popular-col"><a href="#contact" class="btn btn-primary" style="padding:10px 16px; font-size:0.8rem;">Quote</a></td>
+              <td><a href="#contact" class="btn btn-dark" style="padding:10px 16px; font-size:0.8rem;">Quote</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== FINANCING CALLOUT ====== -->
+  <div class="financing-banner">
+    <div class="container">
+      <div class="financing-banner-inner">
+        <div>
+          <p class="financing-banner-eyebrow">Financing Available</p>
+          <h3 class="financing-banner-title">Put Your Machine to Work Before It's Paid Off</h3>
+          <p class="financing-banner-sub">
+            Equipment financing options available for qualified buyers. Your machine generates
+            revenue from day one — let it pay for itself.
+          </p>
+        </div>
+        <a href="/financing" class="btn btn-primary" style="flex-shrink:0; white-space:nowrap;">Apply for Financing →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====== SOFTWARE SUPPORT ====== -->
+  <div class="software">
+    <p class="software-title">Software We Support</p>
+    <div class="software-logos">
+      {softwareLogos.map(logo => (
+        <img src={logo.src} alt={logo.alt} />
+      ))}
+    </div>
+  </div>
+
+  <!-- ====== VIDEO SECTION ====== -->
+  <section class="video-section">
+    <div class="container">
+      <div class="video-grid">
+        <div>
+          <p class="section-label">See It in Action</p>
+          <h2 class="section-title white">Watch the Machines<br />Do the Work</h2>
+          <div class="title-rule"></div>
+          <p style="color:#aaa; line-height:1.8; margin-bottom:32px; font-size:0.95rem;">
+            Nothing builds confidence like watching a machine cut. Head to our
+            YouTube channel for build videos, cut demos, and real customer setups.
+          </p>
+          <div style="display:flex; gap:12px; flex-wrap:wrap;">
+            <a href="https://youtube.com/@ELEVATECNC" target="_blank" rel="noopener" class="btn btn-primary">
+              Watch on YouTube →
+            </a>
+            <a href="https://instagram.com/eleva_tecnc" target="_blank" rel="noopener" class="btn btn-outline">
+              Follow on Instagram
+            </a>
+          </div>
+        </div>
+        <div class="video-thumb-wrap">
+          <!-- Replace with an actual YouTube thumbnail or embed -->
+          <a href="https://youtube.com/@ELEVATECNC" target="_blank" rel="noopener" class="video-thumb">
+            <div class="video-play-btn">▶</div>
+            <p>Watch on YouTube</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== TESTIMONIALS ====== -->
+  <section class="testimonials">
+    <div class="container">
+      <p class="section-label">Customer Reviews</p>
+      <h2 class="section-title">Real Shops, Real Results</h2>
+      <div class="title-rule"></div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">
+            "Great product and amazing customer service! Dillon is very helpful
+            and always willing to answer my questions."
+          </p>
+          <p class="testimonial-author">— Jake</p>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">
+            "I run an Etsy store selling custom decor, and purchasing a CNC router
+            from Elevate CNC has been a game changer. The precision and support from
+            Dillon have helped me take my business to the next level."
+          </p>
+          <p class="testimonial-author">— Lily</p>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">
+            "Seamless process from sales to delivery, installation and support!!!
+            Thank you so much, I'll buy from you again for sure!!!"
+          </p>
+          <p class="testimonial-author">— Nicolas</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== WHY ELEVATE CNC ====== -->
+  <section class="about-strip">
+    <div class="container">
+      <p class="section-label">Why Us</p>
+      <h2 class="section-title white">We Don't Disappear<br />After the Sale</h2>
+      <div class="title-rule"></div>
+      <div class="about-features">
+        <div class="feature-card">
+          <div class="feature-icon">⚙️</div>
+          <h3 class="feature-title">Industrial-Grade Machines</h3>
+          <p class="feature-desc">
+            Every machine is engineered for shop use — not hobby use. Welded steel frames,
+            production spindles, and real vacuum hold-down from day one.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔩</div>
+          <h3 class="feature-title">Built to Your Spec</h3>
+          <p class="feature-desc">
+            Standard packages or fully custom — we configure machines to match your
+            workflow, your material, and your production volume.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📞</div>
+          <h3 class="feature-title">Long-Term Support</h3>
+          <p class="feature-desc">
+            Setup, training, troubleshooting — we're here for the life of the machine.
+            Our customers come back for their next machine because we earn it.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== CONTACT ====== -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <p class="section-label">Get in Touch</p>
+      <h2 class="section-title">Get a Free Quote</h2>
+      <div class="title-rule"></div>
+      <p class="section-sub">
+        Tell us what you're looking to cut and we'll recommend the right machine.
+        No pressure, no obligation.
+      </p>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3>Let's Talk CNC</h3>
+          <div class="contact-detail">
+            <div class="contact-detail-icon">📍</div>
+            <div class="contact-detail-text">
+              <strong>Location</strong>
+              <span>Shelley, Idaho</span>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon">📞</div>
+            <div class="contact-detail-text">
+              <strong>Call or Text</strong>
+              <span><a href="tel:+12088675309">(208) 867-5309</a></span>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon">✉</div>
+            <div class="contact-detail-text">
+              <strong>Email</strong>
+              <span><a href="mailto:info@elevatecnc.com">info@elevatecnc.com</a></span>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon">💳</div>
+            <div class="contact-detail-text">
+              <strong>Financing</strong>
+              <span><a href="/financing">Apply for equipment financing →</a></span>
+            </div>
+          </div>
+          <div class="contact-social">
+            <a href="https://facebook.com/elevatecnc" target="_blank" rel="noopener" aria-label="Facebook">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="https://instagram.com/eleva_tecnc" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="https://youtube.com/@ELEVATECNC" target="_blank" rel="noopener" aria-label="YouTube">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <form class="contact-form" name="contact" method="POST" data-netlify="true">
+          <input type="hidden" name="form-name" value="contact" />
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Name *</label>
+              <input type="text" id="name" name="name" required placeholder="Your name" />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" placeholder="(208) 000-0000" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required placeholder="your@email.com" />
+          </div>
+          <div class="form-group">
+            <label for="interest">Interested In</label>
+            <select id="interest" name="interest">
+              <option value="">Select a machine type...</option>
+              <option>CNC Router — Ascent Series ($15,000)</option>
+              <option>CNC Router — Summit Series ($18,400)</option>
+              <option>CNC Router — Apex Series ($40,000)</option>
+              <option>CNC Plasma Table</option>
+              <option>Laser System</option>
+              <option>Custom Build / Configuration</option>
+              <option>General Inquiry</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Tell Us About Your Shop *</label>
+            <textarea id="message" name="message" required placeholder="What are you cutting? What materials? What's your production volume? Any specific size requirements?"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="align-self:flex-start;">Get My Free Quote →</button>
+          <p style="font-size:0.8rem; color:var(--text-muted); margin-top:8px;">
+            We typically respond within a few hours during business hours.
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</Layout>

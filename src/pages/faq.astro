@@ -1,0 +1,119 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const faqs = [
+  {
+    q: 'What do I need to operate a CNC router?',
+    a: `<ol>
+      <li><strong>Router Bits:</strong> You'll need router bits specific to your application and material — different bits for engraving, carving, profiling, and more.</li>
+      <li><strong>Computer System:</strong> A computer with a monitor, mouse, and keyboard to run the control software. Our machines come ready to connect.</li>
+      <li><strong>CAD/CAM Software:</strong> Software to design projects (CAD) and generate toolpaths/G-code (CAM). We support Fusion 360, VCarve Pro, SheetCAM, and more.</li>
+      <li><strong>Dust Collection:</strong> A shop vac or dust collector is strongly recommended to keep your machine and workspace clean.</li>
+      <li><strong>Material &amp; Workholding:</strong> Your material (wood, plastics, composites, etc.) and a way to hold it — clamps, vacuum table, or t-tracks.</li>
+    </ol>`,
+  },
+  {
+    q: 'What materials can a CNC router cut?',
+    a: `Our CNC routers are designed for a wide range of materials including:<br/><br/>
+    <ul>
+      <li>Hardwood and softwood lumber</li>
+      <li>Plywood and MDF</li>
+      <li>Plastics (acrylic, HDPE, polycarbonate)</li>
+      <li>Foam and composites</li>
+      <li>Aluminum (with appropriate feeds/speeds)</li>
+      <li>Signage materials (PVC, aluminum composite)</li>
+    </ul>`,
+  },
+  {
+    q: 'Do you offer training after purchase?',
+    a: `Yes. We provide machine setup assistance and operator training with every machine. We walk you through the control software, basic operation, and your first cuts. Ongoing support is also available — we don't disappear after the sale.`,
+  },
+  {
+    q: 'What is the difference between the Ascent, Summit, and Apex series?',
+    a: `<ul>
+      <li><strong>Ascent Series ($15,000):</strong> Entry-level, runs on standard household power. Ideal for hobbyists, makers, and small shops getting started with CNC.</li>
+      <li><strong>Summit Series ($18,400):</strong> Production-grade with a 4HP air-cooled spindle, 6-zone vacuum table, and welded steel frame. Best for cabinet shops and sign makers with daily production needs.</li>
+      <li><strong>Apex Series ($40,000):</strong> High-production machine with AC servo motors, 12HP ATC spindle, and pneumatic alignment pins. Built for demanding shop environments and high-volume workflows.</li>
+    </ul>`,
+  },
+  {
+    q: 'Do you offer financing?',
+    a: `Yes! We offer financing options to help get your machine working for you sooner. Visit our <a href="/financing" style="color:var(--accent)">Financing page</a> to submit a request or contact us directly to discuss options.`,
+  },
+  {
+    q: 'How long does it take to receive a machine after ordering?',
+    a: `Lead times vary depending on configuration and demand. Contact us for current lead times on any machine. We work to get you running as quickly as possible and will communicate clearly throughout the process.`,
+  },
+  {
+    q: 'Can I get a custom CNC machine built to my specifications?',
+    a: `Absolutely. We offer custom CNC configurations, upgrades, and purpose-built machines tailored to your workflow — from table size and drive systems to controls, accessories, and tooling. Contact us to discuss your requirements.`,
+  },
+  {
+    q: 'What kind of ongoing support do you provide?',
+    a: `We provide troubleshooting support, software assistance, and machine maintenance guidance. We're reachable by phone and email and committed to keeping your machine running. Our customers come back to us for their next machine because we stand behind what we sell.`,
+  },
+  {
+    q: 'What software do you recommend for running a CNC router?',
+    a: `We support and recommend several software options depending on your workflow:<br/><br/>
+    <ul>
+      <li><strong>Fusion 360</strong> — Full CAD/CAM suite, great for 3D work</li>
+      <li><strong>VCarve Pro</strong> — Excellent for sign-making and woodworking</li>
+      <li><strong>SheetCAM</strong> — Preferred for plasma cutting and sheet operations</li>
+      <li><strong>Centroid</strong> — Our recommended CNC control software</li>
+    </ul>`,
+  },
+  {
+    q: 'Where are you located?',
+    a: `We are located in Shelley, Idaho. We serve customers nationwide and can arrange machine delivery and remote setup assistance anywhere in the USA.`,
+  },
+];
+---
+
+<Layout title="FAQ" description="Frequently asked questions about Elevate CNC machines, operation, support, and financing." currentPage="/faq">
+
+  <!-- Page Hero -->
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <p class="page-hero-label">// Support</p>
+      <h1 class="page-hero-title">Frequently Asked<br />Questions</h1>
+    </div>
+  </div>
+
+  <!-- FAQ List -->
+  <section class="faq-section">
+    <div class="container">
+      <p class="section-label">Common Questions</p>
+      <h2 class="section-title">Everything You Need to Know</h2>
+      <div class="title-rule"></div>
+      <p class="section-sub">
+        Can't find your answer? <a href="/#contact" style="color:var(--accent)">Send us a message</a> and we'll get back to you quickly.
+      </p>
+
+      <div class="faq-list">
+        {faqs.map((faq, i) => (
+          <div class="faq-item">
+            <button class={`faq-question ${i === 0 ? 'open' : ''}`}>
+              {faq.q}
+              <span class="faq-icon">+</span>
+            </button>
+            <div class={`faq-answer ${i === 0 ? 'open' : ''}`} set:html={faq.a} />
+          </div>
+        ))}
+      </div>
+
+      <!-- CTA -->
+      <div style="margin-top: 64px; padding: 48px; background: var(--dark-2); display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;">
+        <div>
+          <h3 style="font-family: var(--font-head); font-size: 1.6rem; font-weight: 800; text-transform: uppercase; color: var(--white); margin-bottom: 8px;">
+            Still have questions?
+          </h3>
+          <p style="color: #aaa; font-size: 0.95rem;">
+            Reach out directly — we're happy to talk through your project.
+          </p>
+        </div>
+        <a href="/#contact" class="btn btn-primary">Contact Us →</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>

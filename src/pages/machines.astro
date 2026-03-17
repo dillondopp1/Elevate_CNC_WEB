@@ -1,0 +1,177 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="CNC Machines" description="Elevate CNC machine lineup — CNC Routers (Ascent, Summit, Apex), Plasma Tables, Laser Systems, and Custom Builds." currentPage="/machines">
+
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <p class="page-hero-label">// Product Lineup</p>
+      <h1 class="page-hero-title">Our Machines</h1>
+    </div>
+  </div>
+
+  <!-- CNC Routers -->
+  <section id="routers" style="padding: var(--section-pad); background: var(--white);">
+    <div class="container">
+      <p class="section-label">CNC Routers</p>
+      <h2 class="section-title">Three Tiers.<br />One Standard of Quality.</h2>
+      <div class="title-rule"></div>
+      <p class="section-sub">
+        From entry-level to high-production, every Elevate CNC router is built with
+        a welded steel frame, precision components, and real support.
+      </p>
+
+      <div class="packages-grid" style="margin-top: 48px;">
+
+        <div class="package-card">
+          <p class="pkg-series">Ascent Series</p>
+          <h3 class="pkg-name">Entry Level</h3>
+          <div class="pkg-price"><span>$</span>15,000</div>
+          <p class="pkg-per">starting price</p>
+          <p class="pkg-desc">
+            Designed for hobbyists, makers, and small shops. Runs on standard household
+            power. Accurate, rigid, and capable — a real machine at an accessible price.
+          </p>
+          <ul class="pkg-features">
+            <li>Runs on 110V household power</li>
+            <li>Basic Setup &amp; Commissioning</li>
+            <li>Standard Tooling Package</li>
+            <li>CAD/CAM Software Included</li>
+            <li>24/7 Support &amp; 1-Year Warranty</li>
+          </ul>
+          <a href="/#contact" class="btn btn-dark pkg-cta">Request a Quote</a>
+        </div>
+
+        <div class="package-card popular">
+          <div class="popular-badge">Most Popular</div>
+          <p class="pkg-series">Summit Series</p>
+          <h3 class="pkg-name">Production Grade</h3>
+          <div class="pkg-price"><span>$</span>18,400</div>
+          <p class="pkg-per">starting price</p>
+          <p class="pkg-desc">
+            Built for cabinet shops, sign makers, and small manufacturers who need
+            reliability and consistent daily performance.
+          </p>
+          <ul class="pkg-features">
+            <li>4HP Air-Cooled Spindle</li>
+            <li>6-Zone Vacuum Table</li>
+            <li>6HP Regenerative Vacuum Pump Kit</li>
+            <li>Ethernet Communication</li>
+            <li>Welded Steel Frame</li>
+          </ul>
+          <a href="/#contact" class="btn btn-primary pkg-cta">Request a Quote</a>
+        </div>
+
+        <div class="package-card">
+          <p class="pkg-series">Apex Series</p>
+          <h3 class="pkg-name">High Production</h3>
+          <div class="pkg-price"><span>$</span>40,000</div>
+          <p class="pkg-per">starting price</p>
+          <p class="pkg-desc">
+            Top-tier CNC router for demanding shop environments where efficiency,
+            automation, and reliability matter most.
+          </p>
+          <ul class="pkg-features">
+            <li>AC Servo Motors</li>
+            <li>12HP ATC Spindle (Auto Tool Change)</li>
+            <li>Pneumatic Alignment Pins</li>
+            <li>6-Zone Vacuum Table</li>
+            <li>Integrated Dust Collection</li>
+          </ul>
+          <a href="/#contact" class="btn btn-dark pkg-cta">Request a Quote</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Plasma Tables -->
+  <section id="plasma" style="padding: var(--section-pad); background: var(--light);">
+    <div class="container">
+      <p class="section-label">Plasma Tables</p>
+      <h2 class="section-title">CNC Plasma Cutting</h2>
+      <div class="title-rule"></div>
+      <p class="section-sub">
+        Precision plasma cutting tables for steel, aluminum, and sheet metal.
+        Built for fabricators, welders, and metal shops.
+      </p>
+      <div style="margin-top: 48px; background: var(--dark-2); padding: 48px; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;">
+        <div>
+          <h3 style="font-family: var(--font-head); font-size: 1.8rem; font-weight: 800; text-transform: uppercase; color: var(--white); margin-bottom: 16px;">
+            Built for Metal Shops
+          </h3>
+          <p style="color: #aaa; line-height: 1.8; margin-bottom: 24px; font-size: 0.95rem;">
+            Our plasma tables are designed for high-duty cycle use in production
+            environments. Contact us to configure a table that fits your material
+            sizes and production volume.
+          </p>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px;">
+            {['Steel, aluminum & stainless cutting', 'Custom table sizes available', 'Integrated THC (Torch Height Control)', 'SheetCAM software compatible', 'Welded steel water table'].map(f => (
+              <li style="display: flex; gap: 10px; color: #ccc; font-size: 0.9rem; align-items: center;">
+                <span style="color: var(--accent); font-weight: 700;">✓</span> {f}
+              </li>
+            ))}
+          </ul>
+          <a href="/#contact" class="btn btn-primary">Get Plasma Pricing</a>
+        </div>
+        <div style="background: var(--dark-3); aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; color: #444; font-family: var(--font-head); text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.1em; flex-direction: column; gap: 8px;">
+          <span style="font-size: 2rem; opacity: 0.4;">🔥</span>
+          <span>Add plasma table photo<br/>to <code>public/images/plasma-table.jpg</code></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lasers -->
+  <section id="lasers" style="padding: var(--section-pad); background: var(--white);">
+    <div class="container">
+      <p class="section-label">Laser Systems</p>
+      <h2 class="section-title">CNC Laser Systems</h2>
+      <div class="title-rule"></div>
+      <p class="section-sub">
+        Laser cutting and engraving systems for wood, acrylic, leather, and more.
+        Precision-cut parts and engraved products at production speed.
+      </p>
+      <div style="margin-top: 48px; background: var(--light); padding: 48px; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;">
+        <div style="background: var(--dark-3); aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; color: #444; font-family: var(--font-head); text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.1em; flex-direction: column; gap: 8px;">
+          <span style="font-size: 2rem; opacity: 0.4;">⚡</span>
+          <span>Add laser system photo<br/>to <code>public/images/laser-system.jpg</code></span>
+        </div>
+        <div>
+          <h3 style="font-family: var(--font-head); font-size: 1.8rem; font-weight: 800; text-transform: uppercase; color: var(--dark); margin-bottom: 16px;">
+            Precision Laser Solutions
+          </h3>
+          <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 24px; font-size: 0.95rem;">
+            Whether you need a CO₂ laser for wood and acrylic or a fiber laser for
+            metal marking, we can configure the right system for your shop.
+          </p>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px;">
+            {['CO₂ laser for wood, acrylic, leather', 'Fiber laser for metal engraving', 'Custom bed sizes available', 'Compatible with LightBurn software', 'Precise engraving & clean cuts'].map(f => (
+              <li style="display: flex; gap: 10px; color: var(--text); font-size: 0.9rem; align-items: center;">
+                <span style="color: var(--accent); font-weight: 700;">✓</span> {f}
+              </li>
+            ))}
+          </ul>
+          <a href="/#contact" class="btn btn-primary">Get Laser Pricing</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Custom Builds -->
+  <section id="custom" style="padding: var(--section-pad); background: var(--dark-2);">
+    <div class="container text-center">
+      <p class="section-label">Custom</p>
+      <h2 class="section-title white">Need Something Specific?</h2>
+      <div class="title-rule"></div>
+      <p class="section-sub">
+        We build custom CNC configurations, upgrades, and purpose-built machines
+        tailored to your workflow — from table size and drive systems to controls,
+        accessories, and tooling.
+      </p>
+      <a href="/#contact" class="btn btn-primary mt-32">Talk to Us About a Custom Build</a>
+    </div>
+  </section>
+
+</Layout>

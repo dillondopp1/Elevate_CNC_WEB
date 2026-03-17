@@ -1,0 +1,86 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// Add your image filenames to public/images/gallery/
+// Format: { src: '/images/gallery/your-photo.jpg', alt: 'Description', caption: 'Optional caption' }
+const images: { src: string; alt: string; caption?: string }[] = [
+  // ── ADD YOUR PHOTOS HERE ──
+  // { src: '/images/gallery/cnc-router-1.jpg', alt: 'Summit Series CNC Router', caption: 'Summit Series' },
+  // { src: '/images/gallery/plasma-1.jpg', alt: 'Plasma cutting in action', caption: 'Plasma Table' },
+];
+
+const placeholderCount = Math.max(0, 9 - images.length);
+---
+
+<Layout title="Gallery" description="Photo gallery of Elevate CNC machines, builds, and customer projects." currentPage="/gallery">
+
+  <!-- Page Hero -->
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <p class="page-hero-label">// Portfolio</p>
+      <h1 class="page-hero-title">Machine Gallery</h1>
+    </div>
+  </div>
+
+  <!-- Gallery -->
+  <section class="gallery-section">
+    <div class="container">
+      <p class="section-label">Our Work</p>
+      <h2 class="section-title">Machines in Action</h2>
+      <div class="title-rule"></div>
+      <p class="section-sub">
+        Real machines, real shops, real results. Follow us on
+        <a href="https://youtube.com/@ELEVATECNC" target="_blank" rel="noopener" style="color:var(--accent)">YouTube</a> and
+        <a href="https://instagram.com/eleva_tecnc" target="_blank" rel="noopener" style="color:var(--accent)">Instagram</a>
+        for more.
+      </p>
+
+      <div class="gallery-grid">
+        {images.map(img => (
+          <div class="gallery-item">
+            <img src={img.src} alt={img.alt} loading="lazy" />
+          </div>
+        ))}
+
+        {/* Placeholder slots for when images haven't been added yet */}
+        {Array.from({ length: placeholderCount }).map((_, i) => (
+          <div class="gallery-item">
+            <div class="gallery-placeholder">
+              <span class="gallery-placeholder-icon">📷</span>
+              <span>Add Photo</span>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {images.length === 0 && (
+        <div style="margin-top: 40px; padding: 32px; background: var(--light); border-left: 3px solid var(--accent);">
+          <p style="font-family: var(--font-head); font-weight: 700; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 0.08em; color: var(--dark); margin-bottom: 8px;">
+            Add Your Photos
+          </p>
+          <p style="font-size: 0.9rem; color: var(--text-muted);">
+            Drop photos into <code style="background:#e0e0e0; padding: 2px 6px;">public/images/gallery/</code>
+            and add them to the <code style="background:#e0e0e0; padding: 2px 6px;">images</code> array in
+            <code style="background:#e0e0e0; padding: 2px 6px;">src/pages/gallery.astro</code>.
+          </p>
+        </div>
+      )}
+
+      <!-- YouTube CTA -->
+      <div style="margin-top: 64px; background: var(--dark-2); padding: 48px; text-align: center;">
+        <p class="section-label" style="justify-content: center; display: flex;">Watch Us Work</p>
+        <h3 style="font-family: var(--font-head); font-size: 2rem; font-weight: 800; text-transform: uppercase; color: var(--white); margin-bottom: 16px;">
+          See the Machines in Action
+        </h3>
+        <p style="color: #aaa; margin-bottom: 32px; max-width: 480px; margin-left: auto; margin-right: auto; font-size: 0.95rem;">
+          Watch build videos, cut demos, and customer setups on our YouTube channel.
+        </p>
+        <a href="https://youtube.com/@ELEVATECNC" target="_blank" rel="noopener" class="btn btn-primary">
+          Watch on YouTube →
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+</Layout>

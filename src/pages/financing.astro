@@ -1,0 +1,174 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Financing" description="Financing options for Elevate CNC machines. Apply for equipment financing and get your CNC machine working for you sooner." currentPage="/financing">
+
+  <!-- Page Hero -->
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <p class="page-hero-label">// Financing</p>
+      <h1 class="page-hero-title">Equipment Financing<br />Made Simple</h1>
+    </div>
+  </div>
+
+  <!-- Financing Section -->
+  <section class="financing-section">
+    <div class="container">
+      <p class="section-label">Get Funded</p>
+      <h2 class="section-title">Let Your Machine Pay For Itself</h2>
+      <div class="title-rule"></div>
+
+      <div class="financing-grid">
+
+        <!-- Info -->
+        <div class="financing-info">
+          <h3>Why Finance?</h3>
+          <p>
+            A CNC machine is an investment that generates revenue from day one.
+            Financing lets you get to work immediately without tying up capital —
+            your machine pays for itself while you grow your shop.
+          </p>
+          <p>
+            We work with equipment financing partners to find terms that fit your
+            business. Whether you're a sole proprietor, LLC, or corporation, we
+            can help you find a path to ownership.
+          </p>
+
+          <div class="financing-steps">
+            <div class="financing-step">
+              <div class="step-num">1</div>
+              <div class="step-text">
+                <strong>Submit your application</strong>
+                <span>Fill out the form with your business and personal information.</span>
+              </div>
+            </div>
+            <div class="financing-step">
+              <div class="step-num">2</div>
+              <div class="step-text">
+                <strong>We review &amp; follow up</strong>
+                <span>Our team reviews your application and connects you with financing options.</span>
+              </div>
+            </div>
+            <div class="financing-step">
+              <div class="step-num">3</div>
+              <div class="step-text">
+                <strong>Get approved</strong>
+                <span>Once approved, we schedule your machine build and delivery.</span>
+              </div>
+            </div>
+            <div class="financing-step">
+              <div class="step-num">4</div>
+              <div class="step-text">
+                <strong>Start making money</strong>
+                <span>Your machine arrives, we help you get set up, and you get to work.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Machine package reminder -->
+          <div style="background: var(--light); padding: 28px; margin-top: 8px; border-left: 3px solid var(--accent);">
+            <p style="font-family: var(--font-head); font-weight: 700; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 0.08em; margin-bottom: 12px;">Machine Packages</p>
+            <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.8;">
+              Ascent Series — from <strong>$15,000</strong><br />
+              Summit Series — from <strong>$18,400</strong><br />
+              Apex Series — from <strong>$40,000</strong><br />
+              <a href="/#pricing" style="color: var(--accent); font-weight: 600;">View all packages →</a>
+            </p>
+          </div>
+        </div>
+
+        <!-- Application Form -->
+        <div>
+          <h3 style="font-family: var(--font-head); font-size: 1.4rem; font-weight: 700; text-transform: uppercase; margin-bottom: 28px; color: var(--dark);">
+            Financing Application
+          </h3>
+
+          <form class="contact-form" name="financing" method="POST" data-netlify="true">
+            <input type="hidden" name="form-name" value="financing" />
+
+            <!-- Business Info -->
+            <p style="font-family: var(--font-head); font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.12em; color: var(--accent); margin-bottom: 8px; margin-top: 8px;">Business Information</p>
+
+            <div class="form-group">
+              <label for="business-name">Business Name *</label>
+              <input type="text" id="business-name" name="business_name" required />
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="company-type">Company Type *</label>
+                <select id="company-type" name="company_type" required>
+                  <option value="">Select...</option>
+                  <option>Sole Proprietor</option>
+                  <option>LLC</option>
+                  <option>S Corp</option>
+                  <option>C Corp</option>
+                  <option>Partnership</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="years-owned">Years Under Current Ownership *</label>
+                <input type="number" id="years-owned" name="years_owned" min="0" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="annual-revenue">Annual Revenue (approx.)</label>
+              <input type="text" id="annual-revenue" name="annual_revenue" placeholder="e.g. $150,000" />
+            </div>
+
+            <!-- Applicant Info -->
+            <p style="font-family: var(--font-head); font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.12em; color: var(--accent); margin-bottom: 8px; margin-top: 24px;">Applicant Information</p>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="first-name">First Name *</label>
+                <input type="text" id="first-name" name="first_name" required />
+              </div>
+              <div class="form-group">
+                <label for="last-name">Last Name *</label>
+                <input type="text" id="last-name" name="last_name" required />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fin-email">Email *</label>
+                <input type="email" id="fin-email" name="email" required />
+              </div>
+              <div class="form-group">
+                <label for="fin-phone">Phone *</label>
+                <input type="tel" id="fin-phone" name="phone" required />
+              </div>
+            </div>
+
+            <!-- Machine -->
+            <p style="font-family: var(--font-head); font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.12em; color: var(--accent); margin-bottom: 8px; margin-top: 24px;">Machine Interest</p>
+
+            <div class="form-group">
+              <label for="fin-machine">Machine Package *</label>
+              <select id="fin-machine" name="machine" required>
+                <option value="">Select a machine...</option>
+                <option>CNC Router — Ascent Series ($15,000)</option>
+                <option>CNC Router — Summit Series ($18,400)</option>
+                <option>CNC Router — Apex Series ($40,000)</option>
+                <option>CNC Plasma Table</option>
+                <option>Laser System</option>
+                <option>Custom Build / Configuration</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="fin-notes">Additional Notes</label>
+              <textarea id="fin-notes" name="notes" placeholder="Any additional details about your shop, intended use, or questions..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="align-self: flex-start;">Submit Application →</button>
+            <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 12px;">
+              We'll follow up within 1–2 business days to discuss your options.
+            </p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</Layout>

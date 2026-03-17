@@ -1,0 +1,71 @@
+---
+export interface Props {
+  currentPage?: string;
+}
+const { currentPage = '/' } = Astro.props;
+
+const links = [
+  { href: '/',           label: 'Home' },
+  { href: '/machines',   label: 'Machines' },
+  { href: '/gallery',    label: 'Gallery' },
+  { href: '/financing',  label: 'Financing' },
+  { href: '/faq',        label: 'FAQ' },
+];
+---
+
+<!-- Top utility bar -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-left">
+      <span>📍 Shelley, ID</span>
+      <span class="separator">|</span>
+      <a href="https://facebook.com/elevatecnc" target="_blank" rel="noopener">Facebook</a>
+      <span class="separator">|</span>
+      <a href="https://instagram.com/eleva_tecnc" target="_blank" rel="noopener">Instagram</a>
+      <span class="separator">|</span>
+      <a href="https://youtube.com/@ELEVATECNC" target="_blank" rel="noopener">YouTube</a>
+    </div>
+    <div class="topbar-right">
+      <a href="tel:+12088675309" style="color: #fff; font-weight: 600; letter-spacing: 0.02em;">
+        📞 (208) 867-5309
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Main navbar -->
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="/" class="nav-logo">
+      <img
+        src="https://cdn.durable.co/logos/1fM8sswlAhoaxxwj6XLdTvuzHO2EZNMrQK77vDr17NjP9LOBkNCtlfYqOI7uCZqF.png"
+        alt="Elevate CNC"
+      />
+    </a>
+
+    <ul class="nav-links" id="nav-links">
+      {links.map(link => (
+        <li>
+          <a
+            href={link.href}
+            class={currentPage === link.href ? 'active' : ''}
+          >
+            {link.label}
+          </a>
+        </li>
+      ))}
+      <li>
+        <a href="/#contact" class="nav-cta">Get a Quote</a>
+      </li>
+      <li class="nav-phone-mobile">
+        <a href="tel:+12088675309">📞 (208) 867-5309</a>
+      </li>
+    </ul>
+
+    <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</nav>
