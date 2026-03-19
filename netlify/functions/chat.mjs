@@ -2,7 +2,7 @@ import Anthropic from '@anthropic-ai/sdk';
 import machineCatalogData from '../../src/lib/machine_catalog.json' assert { type: 'json' };
 
 const HUBSPOT_BASE = 'https://api.hubapi.com';
-const MODEL = 'claude-sonnet-4-5';
+const MODEL = 'claude-haiku-4-5';
 const MAX_ITERATIONS = 10;
 
 // ── Machine Catalog ───────────────────────────────────────────────────────────
