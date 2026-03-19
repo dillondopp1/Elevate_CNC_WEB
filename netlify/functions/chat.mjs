@@ -1,14 +1,5 @@
 import Anthropic from '@anthropic-ai/sdk';
-import { readFileSync } from 'fs';
-import { resolve, dirname } from 'path';
-import { fileURLToPath } from 'url';
-
-const __dirname = dirname(fileURLToPath(import.meta.url));
-
-// Machine catalog — bundled relative to this function
-const machineCatalogData = JSON.parse(
-  readFileSync(resolve(__dirname, '../../src/lib/machine_catalog.json'), 'utf-8')
-);
+import machineCatalogData from '../../src/lib/machine_catalog.json' assert { type: 'json' };
 
 const HUBSPOT_BASE = 'https://api.hubapi.com';
 const MODEL = 'claude-sonnet-4-5';
