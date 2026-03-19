@@ -1,0 +1,407 @@
+<!-- Dwight Schrute Chat Widget — Elevate CNC AI Sales Agent -->
+
+<!-- Chat Toggle Button -->
+<button class="dwight-btn" id="dwight-btn" aria-label="Chat with Dwight, Sales Director">
+  <svg class="dwight-icon-chat" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+  </svg>
+  <svg class="dwight-icon-close" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+    <line x1="18" y1="6" x2="6" y2="18"></line>
+    <line x1="6" y1="6" x2="18" y2="18"></line>
+  </svg>
+  <span class="dwight-btn-label">Ask Dwight</span>
+</button>
+
+<!-- Chat Panel -->
+<div class="dwight-panel" id="dwight-panel" role="dialog" aria-label="Chat with Dwight" aria-hidden="true">
+  <div class="dwight-header">
+    <div class="dwight-agent">
+      <div class="dwight-avatar">D</div>
+      <div class="dwight-agent-info">
+        <div class="dwight-agent-name">Dwight Schrute</div>
+        <div class="dwight-agent-title">Sales Director · Elevate CNC</div>
+      </div>
+    </div>
+    <div class="dwight-status">
+      <span class="dwight-dot"></span> Online
+    </div>
+  </div>
+
+  <div class="dwight-messages" id="dwight-messages">
+    <div class="dwight-msg dwight-msg--agent">
+      <div class="dwight-msg-bubble">
+        <strong>Dwight Schrute, Sales Director.</strong> I know every machine in our lineup inside and out. Tell me what you need — what you're cutting, your budget, your timeline — and I will find you the right machine. What's your name and what do you do?
+      </div>
+    </div>
+  </div>
+
+  <div class="dwight-input-row">
+    <input
+      class="dwight-input"
+      id="dwight-input"
+      type="text"
+      placeholder="Ask about machines, pricing, specs..."
+      autocomplete="off"
+      maxlength="500"
+    />
+    <button class="dwight-send" id="dwight-send" aria-label="Send">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="22" y1="2" x2="11" y2="13"></line>
+        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<style>
+  /* ── Button ───────────────────────────────────────────── */
+  .dwight-btn {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    z-index: 9000;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent, #1a6ed8);
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    padding: 13px 20px 13px 16px;
+    font-family: var(--font-head, 'Barlow Condensed', sans-serif);
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(26, 110, 216, 0.45);
+    transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
+  }
+  .dwight-btn:hover {
+    background: var(--accent-dark, #1050a8);
+    box-shadow: 0 6px 28px rgba(26, 110, 216, 0.55);
+    transform: translateY(-1px);
+  }
+  .dwight-btn:active { transform: translateY(0); }
+
+  .dwight-icon-close { display: none; }
+  .dwight-btn.open .dwight-icon-chat { display: none; }
+  .dwight-btn.open .dwight-icon-close { display: block; }
+
+  /* ── Panel ────────────────────────────────────────────── */
+  .dwight-panel {
+    position: fixed;
+    bottom: 90px;
+    right: 28px;
+    z-index: 8999;
+    width: 380px;
+    max-width: calc(100vw - 40px);
+    height: 520px;
+    max-height: calc(100vh - 120px);
+    background: #161b22;
+    border: 1px solid #2d3748;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    transform: translateY(20px) scale(0.97);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.2s ease;
+  }
+  .dwight-panel.open {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  /* ── Header ───────────────────────────────────────────── */
+  .dwight-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 16px;
+    border-bottom: 1px solid #2d3748;
+    flex-shrink: 0;
+  }
+  .dwight-agent { display: flex; align-items: center; gap: 10px; }
+  .dwight-avatar {
+    width: 38px;
+    height: 38px;
+    background: linear-gradient(135deg, var(--accent, #1a6ed8), #0d3d8a);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-head, 'Barlow Condensed', sans-serif);
+    font-size: 1.1rem;
+    font-weight: 900;
+    color: #fff;
+    flex-shrink: 0;
+  }
+  .dwight-agent-name {
+    font-family: var(--font-head, 'Barlow Condensed', sans-serif);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+  .dwight-agent-title {
+    font-size: 0.72rem;
+    color: #8a9bb0;
+    margin-top: 1px;
+  }
+  .dwight-status {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.72rem;
+    color: #8a9bb0;
+  }
+  .dwight-dot {
+    width: 7px;
+    height: 7px;
+    background: #48bb78;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  /* ── Messages ─────────────────────────────────────────── */
+  .dwight-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 14px 14px 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    scroll-behavior: smooth;
+  }
+  .dwight-messages::-webkit-scrollbar { width: 4px; }
+  .dwight-messages::-webkit-scrollbar-track { background: transparent; }
+  .dwight-messages::-webkit-scrollbar-thumb { background: #2d3748; border-radius: 4px; }
+
+  .dwight-msg { display: flex; }
+  .dwight-msg--agent { justify-content: flex-start; }
+  .dwight-msg--user  { justify-content: flex-end; }
+
+  .dwight-msg-bubble {
+    max-width: 88%;
+    padding: 10px 13px;
+    border-radius: 12px;
+    font-size: 0.875rem;
+    line-height: 1.55;
+    white-space: pre-wrap;
+  }
+  .dwight-msg--agent .dwight-msg-bubble {
+    background: #21262d;
+    color: #e2e8f0;
+    border-bottom-left-radius: 3px;
+  }
+  .dwight-msg--user .dwight-msg-bubble {
+    background: var(--accent, #1a6ed8);
+    color: #fff;
+    border-bottom-right-radius: 3px;
+  }
+
+  /* Typing indicator */
+  .dwight-typing .dwight-msg-bubble {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 13px 16px;
+  }
+  .dwight-typing-dot {
+    width: 6px;
+    height: 6px;
+    background: #8a9bb0;
+    border-radius: 50%;
+    animation: typing 1.2s infinite;
+  }
+  .dwight-typing-dot:nth-child(2) { animation-delay: 0.2s; }
+  .dwight-typing-dot:nth-child(3) { animation-delay: 0.4s; }
+  @keyframes typing {
+    0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+    30% { transform: translateY(-5px); opacity: 1; }
+  }
+
+  /* ── Input Row ────────────────────────────────────────── */
+  .dwight-input-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 12px 12px;
+    border-top: 1px solid #2d3748;
+    flex-shrink: 0;
+  }
+  .dwight-input {
+    flex: 1;
+    background: #21262d;
+    border: 1px solid #2d3748;
+    border-radius: 8px;
+    color: #e2e8f0;
+    font-family: var(--font-body, 'Barlow', sans-serif);
+    font-size: 0.875rem;
+    padding: 9px 12px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .dwight-input::placeholder { color: #4a5568; }
+  .dwight-input:focus { border-color: var(--accent, #1a6ed8); }
+
+  .dwight-send {
+    flex-shrink: 0;
+    width: 38px;
+    height: 38px;
+    background: var(--accent, #1a6ed8);
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, transform 0.1s;
+  }
+  .dwight-send:hover { background: var(--accent-dark, #1050a8); }
+  .dwight-send:active { transform: scale(0.93); }
+  .dwight-send:disabled { opacity: 0.4; cursor: not-allowed; }
+
+  /* ── Mobile ───────────────────────────────────────────── */
+  @media (max-width: 480px) {
+    .dwight-panel {
+      right: 12px;
+      bottom: 80px;
+      width: calc(100vw - 24px);
+    }
+    .dwight-btn {
+      right: 16px;
+      bottom: 20px;
+    }
+  }
+</style>
+
+<script>
+  const btn    = document.getElementById('dwight-btn')!;
+  const panel  = document.getElementById('dwight-panel')!;
+  const input  = document.getElementById('dwight-input') as HTMLInputElement;
+  const sendBtn = document.getElementById('dwight-send') as HTMLButtonElement;
+  const msgContainer = document.getElementById('dwight-messages')!;
+
+  // Conversation history sent to the API
+  let messages: { role: string; content: any }[] = [];
+  let busy = false;
+
+  // Toggle panel open/close
+  btn.addEventListener('click', () => {
+    const isOpen = panel.classList.toggle('open');
+    btn.classList.toggle('open', isOpen);
+    panel.setAttribute('aria-hidden', String(!isOpen));
+    if (isOpen) {
+      setTimeout(() => input.focus(), 300);
+    }
+  });
+
+  // Close panel when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!panel.contains(e.target as Node) && !btn.contains(e.target as Node)) {
+      panel.classList.remove('open');
+      btn.classList.remove('open');
+      panel.setAttribute('aria-hidden', 'true');
+    }
+  });
+
+  function appendMessage(role: 'user' | 'agent', text: string) {
+    const wrapper = document.createElement('div');
+    wrapper.className = `dwight-msg dwight-msg--${role}`;
+    const bubble = document.createElement('div');
+    bubble.className = 'dwight-msg-bubble';
+    // Convert **bold** to <strong> for agent messages
+    if (role === 'agent') {
+      bubble.innerHTML = text
+        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+        .replace(/\n/g, '<br>');
+    } else {
+      bubble.textContent = text;
+    }
+    wrapper.appendChild(bubble);
+    msgContainer.appendChild(wrapper);
+    msgContainer.scrollTop = msgContainer.scrollHeight;
+    return wrapper;
+  }
+
+  function showTyping() {
+    const wrapper = document.createElement('div');
+    wrapper.className = 'dwight-msg dwight-msg--agent dwight-typing';
+    wrapper.id = 'dwight-typing';
+    wrapper.innerHTML = `<div class="dwight-msg-bubble">
+      <span class="dwight-typing-dot"></span>
+      <span class="dwight-typing-dot"></span>
+      <span class="dwight-typing-dot"></span>
+    </div>`;
+    msgContainer.appendChild(wrapper);
+    msgContainer.scrollTop = msgContainer.scrollHeight;
+  }
+
+  function removeTyping() {
+    document.getElementById('dwight-typing')?.remove();
+  }
+
+  async function sendMessage() {
+    const text = input.value.trim();
+    if (!text || busy) return;
+
+    busy = true;
+    sendBtn.disabled = true;
+    input.value = '';
+
+    appendMessage('user', text);
+    messages.push({ role: 'user', content: text });
+    showTyping();
+
+    try {
+      const res = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ messages }),
+      });
+
+      removeTyping();
+
+      if (!res.ok) {
+        appendMessage('agent', 'I encountered an error. Please try again.');
+        busy = false;
+        sendBtn.disabled = false;
+        return;
+      }
+
+      const data = await res.json();
+
+      // Update full conversation history from server
+      messages = data.messages;
+
+      if (data.response) {
+        appendMessage('agent', data.response);
+      }
+    } catch {
+      removeTyping();
+      appendMessage('agent', 'Connection error. Please try again.');
+    }
+
+    busy = false;
+    sendBtn.disabled = false;
+    input.focus();
+  }
+
+  sendBtn.addEventListener('click', sendMessage);
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      sendMessage();
+    }
+  });
+</script>

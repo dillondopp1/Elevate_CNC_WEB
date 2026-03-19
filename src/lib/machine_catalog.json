@@ -1,0 +1,245 @@
+{
+  "machines": [
+    {
+      "item_id": "3290386000001140011",
+      "name": "Elevate CNC APEX 4X10",
+      "sku": "ECN-APEX-410-ATC",
+      "price": 38400.0,
+      "description": "Elevate CNC Apex Series – Industrial CNC Router (4×10)\n\nThe Apex Series is a production-grade CNC router designed for cabinet shops, sign makers, and small manufacturers who require reliability, accuracy, and consistent performance in daily operation.\n\nIncluded Features\n\nFully welded steel frame construction for rigidity and long-term accuracy\n\nPrecision linear motion system on all axes\n\nHelical rack and pinion drive on X and Y axes\n\nPrecision ball screw–driven Z axis\n\nHigh-torque industrial 1500w AC servo motor system with closed loop feedback and 5:1 gear reduction\n\nDigital motor drivers for smooth, accurate motion control\n\n12 HP air-cooled spindle, up to 24,000 RPM\n\nPremium 12 HP variable frequency drive (VFD)\n\nAutomatic centralized lubrication system\n\nIndustrial limit switches on all axes\n\nEmergency stop system\n\nProduction-ready cable management\n\nMachine setup and testing prior to shipment\n\nControlled by Centroid CNC12 control software\n\nWorking Area\n\nX Axis: 50 in\n\nY Axis: 121 in\n\nZ Axis: 8 in\n\nOverall Machine Dimensions\n\nLength: 144 in\n\nWidth: 106 in\n\nHeight: 75 in\n\nPerformance\n\nMax Rapid Travel Rate:\n50,000 mm/min → 1,968 IPM\n\nMax Working / Cutting Speed:\n30,000 mm/min → 1,181 IPM (≈ 1,200 IPM)\n\nElectrical Requirements\n\n220V Single Phase\n\nTwo 30A circuits required (one for CNC, one for vacuum system)\n\n(1) NEMA L6-30 for the CNC router\n\nWarranty & Support\n\n1-Year Limited Warranty\n\nRemote technical support included",
+      "status": "active",
+      "product_type": "goods",
+      "line": "APEX"
+    },
+    {
+      "item_id": "3290386000000093027",
+      "name": "Elevate CNC Summit ATC",
+      "sku": "ECN-SUMMIT-48-ATC",
+      "price": 24400.0,
+      "description": "Elevate CNC Summit ATC – Industrial CNC Router\n\nThe Summit ATC builds on the proven Summit industrial platform and adds automated tool changing for increased efficiency, repeatability, and reduced cycle times in production environments.\n\nSummit ATC Enhancements\n\n6 HP (4.5 kW) automatic tool change spindle, up to 24,000 RPM\n\nMatched high-performance variable frequency drive (VFD)\n\n8-position linear tool rack\n\nBT30 tool holders with ER25 collets\n\nAutomatic tool length setter for accurate, repeatable tool changes\n\nIntegrated pneumatic system for ATC operation\n\nCompressed air required for tool change operation\n\nControlled by Centroid CNC12 control software\n\nIncluded Features\n\nFully welded steel frame construction for rigidity and long-term accuracy\n\nPrecision linear motion system on all axes\n\nHelical rack and pinion drive on X and Y axes\n\nPrecision ball screw–driven Z axis\n\nHigh-torque industrial stepper motor system with 5:1 gear reduction\n\nDigital motor drivers for smooth, accurate motion control\n\nFull vacuum table\n\nAutomatic centralized lubrication system\n\nIndustrial limit switches on all axes\n\nEmergency stop system\n\nProduction-ready cable management\n\nMachine setup and testing prior to shipment\n\nWorking Area\n\nX Axis: 51 in\n\nY Axis: 98 in\n\nZ Axis: 8 in\n\nOverall Machine Dimensions\n\nLength: 127 in\n\nWidth: 82 in\n\nHeight: 60 in\n\nPerformance\n\nMaximum Rapid Speed: up to 800 IPM\n\nMaximum Cutting Speed: up to 600 IPM\n\nElectrical & Air Requirements\n\n220V single-phase\n\nTwo dedicated 30A circuits required (one for CNC, one for vacuum system)\n\nNEMA L6-30 twist-lock receptacles\n\nCompressed air supply required for ATC operation\n\nMachine Weight\n\nApprox. 2,975 lbs\n\nWarranty & Support\n\n1-Year Limited Warranty\n\nRemote technical support included",
+      "status": "active",
+      "product_type": "goods",
+      "line": "Summit"
+    },
+    {
+      "item_id": "3290386000001047001",
+      "name": "Elevate CNC SUMMIT 6x12",
+      "sku": "ECN-SUMMIT-612-STD",
+      "price": 24200.0,
+      "description": "Elevate CNC Summit Series – Industrial CNC Router (4×8)\n\nThe Summit Series is a production-grade CNC router designed for cabinet shops, sign makers, and small manufacturers who require reliability, accuracy, and consistent performance in daily operation.\n\nIncluded Features\n\nFully welded steel frame construction for rigidity and long-term accuracy\n\nPrecision linear motion system on all axes\n\nHelical rack and pinion drive on X and Y axes\n\nPrecision ball screw–driven Z axis\n\nHigh-torque industrial servo motor system with closed loop feedback and 5:1 gear reduction\n\nDigital motor drivers for smooth, accurate motion control\n\n10 HP air-cooled spindle, up to 24,000 RPM\n\nPremium 10 HP variable frequency drive (VFD)\n\nAutomatic centralized lubrication system\n\nIndustrial limit switches on all axes\n\nEmergency stop system\n\nProduction-ready cable management\n\nMachine setup and testing prior to shipment\n\nControlled by Centroid CNC12 control software\n\nWorking Area\n\nX Axis: 72 in\n\nY Axis: 144 in\n\nZ Axis: 8 in\n\nOverall Machine Dimensions\n\nLength: 175 in\n\nWidth: 106 in\n\nHeight: 60 in\n\nPerformance\n\nMaximum Rapid Speed: up to 1000 IPM\n\nMaximum Cutting Speed: up to 80p IPM\n\nElectrical Requirements\n\n220V Single Phase\n\nTwo 30A circuits required (one for CNC, one for vacuum system)\n\n(1) NEMA L6-30 for the CNC router\n\nWarranty & Support\n\n1-Year Limited Warranty\n\nRemote technical support included",
+      "status": "active",
+      "product_type": "goods",
+      "line": "Summit"
+    },
+    {
+      "item_id": "3290386000000088001",
+      "name": "Elevate CNC SUMMIT 4x8",
+      "sku": "ECN-SUMMIT-48-STD",
+      "price": 18600.0,
+      "description": "Elevate CNC Summit Series – Industrial CNC Router (4×8)\n\nThe Summit Series is a production-grade CNC router designed for cabinet shops, sign makers, and small manufacturers who require reliability, accuracy, and consistent performance in daily operation.\n\nIncluded Features\n\nFully welded steel frame construction for rigidity and long-term accuracy\n\nPrecision linear motion system on all axes\n\nHelical rack and pinion drive on X and Y axes\n\nPrecision ball screw–driven Z axis\n\nHigh-torque industrial stepper motor system with 5:1 gear reduction\n\nDigital motor drivers for smooth, accurate motion control\n\n3 HP air-cooled spindle, up to 18,000 RPM\n\nPremium 3 HP variable frequency drive (VFD)\n\nFull vacuum table\n\nAutomatic centralized lubrication system\n\nIndustrial limit switches on all axes\n\nEmergency stop system\n\nProduction-ready cable management\n\nMachine setup and testing prior to shipment\n\nControlled by Centroid CNC12 control software\n\nWorking Area\n\nX Axis: 51 in\n\nY Axis: 98 in\n\nZ Axis: 8 in\n\nOverall Machine Dimensions\n\nLength: 127 in\n\nWidth: 82 in\n\nHeight: 60 in\n\nPerformance\n\nMaximum Rapid Speed: up to 800 IPM\n\nMaximum Cutting Speed: up to 600 IPM\n\nElectrical Requirements\n\n220V Single Phase\n\nTwo 30A circuits required (one for CNC, one for vacuum system)\n\n(1) NEMA L6-30 for the CNC router\n\n(1) NEMA L6-30 for the vacuum system\n\nEach on its own dedicated 30A breaker\n\nMachine Weight\n\nApprox. 2,975 lbs\n\nWarranty & Support\n\n1-Year Limited Warranty\n\nRemote technical support included",
+      "status": "active",
+      "product_type": "goods",
+      "line": "Summit"
+    },
+    {
+      "item_id": "3290386000000983686",
+      "name": "Elevate CNC SUMMIT 4x4",
+      "sku": "ECN-SUMMIT-44-STD",
+      "price": 15600.0,
+      "description": "Elevate CNC Summit Series – Industrial CNC Router (4×4)\n\nThe Summit Series is a production-grade CNC router designed for cabinet shops, sign makers, and small manufacturers who require reliability, accuracy, and consistent performance in daily operation.\n\nIncluded Features\n\nFully welded steel frame construction for rigidity and long-term accuracy\n\nPrecision linear motion system on all axes\n\nHelical rack and pinion drive on X and Y axes\n\nPrecision ball screw–driven Z axis\n\nHigh-torque industrial stepper motor system with 5:1 gear reduction\n\nDigital motor drivers for smooth, accurate motion control\n\n3 HP air-cooled spindle, up to 18,000 RPM\n\nPremium 3 HP variable frequency drive (VFD)\n\nFull vacuum table\n\nAutomatic centralized lubrication system\n\nIndustrial limit switches on all axes\n\nEmergency stop system\n\nProduction-ready cable management\n\nMachine setup and testing prior to shipment\n\nControlled by Centroid CNC12\n\nWorking Area\n\nX Axis: 48 in\n\nY Axis: 48 in\n\nZ Axis: 8 in\n\nOverall Machine Dimensions\n\nLength: 79 in\n\nWidth: 79 in\n\nHeight: 60 in\n\nPerformance\n\nMaximum Rapid Speed: up to 800 IPM\n\nMaximum Cutting Speed: up to 600 IPM\n\nElectrical Requirements\n\n220V single phase\n\nTwo 30A circuits required (one for CNC, one for vacuum system)\n\n(1) NEMA L6-30 for the CNC router\n\n(1) NEMA L6-30 for the vacuum system\n\nEach on its own dedicated 30A breaker\n\nMachine Weight\n\nApprox. 2,000 lbs\n\nWarranty & Support\n\n1-Year Limited Warranty\n\nRemote technical support included",
+      "status": "active",
+      "product_type": "goods",
+      "line": "Summit"
+    },
+    {
+      "item_id": "3290386000001118011",
+      "name": "Elevate CNC Summit Lathe",
+      "sku": "ECNC-LATHE-SUM-48",
+      "price": 14600.0,
+      "description": "Elevate CNC Summit Lathe\nModel\n\nSummit Lathe 60×20\n\nWorking Area\n\nMaximum turning length: 59 in (1500 mm)\n\nMaximum turning diameter: 19.7 in (500 mm)\n\nOptional extended lengths: 79 in (2000 mm), 98 in (2500 mm), 118 in (3000 mm)\n\nOptional max diameters: 15.7 in (400 mm), 19.7 in (500 mm)\n\nDrive & Motion System\n\nLinear motion: Taiwan Hiwin square linear rails\n\nBallscrews: Taiwan TBI precision ballscrews\n\nDrivers: Yako high-torque stepper drivers\n\nTransmission: Precision ballscrew-driven axes for smooth, repeatable motion\n\nMotor & Speed\n\nMain motor: 7.4 HP (5.5 kW) asynchronous motor\n\nRotational speed: 0–3000 RPM, electronically controlled\n\nSpindle: Not applicable (lathe-based turning system)\n\nAccuracy & Performance\n\nPositioning accuracy: ±0.002 in (±0.05 mm)\n\nDesigned for repeatable production turning, not hobby-grade work\n\nControl System\n\nController: 1000TC industrial control system\n\nInterface: USB-based, user-friendly operation\n\nSoftware compatibility: CorelDRAW, ArtCAM, AutoCAD, and other industry-standard CAD/CAM software\n\nElectrical\n\nInput voltage options:\n\n220V single-phase\n\n220V three-phase\n\n(Voltage configured based on customer location and shop power)\n\nMachine Dimensions & Weight\n\nOverall dimensions:\n\n122 in × 59 in × 59 in (3100 × 1500 × 1500 mm)\n\nMachine weight: ≈ 3,530 lbs (1600 kg)\n\nStandard Function\n\nCNC wood lathing / turning\n\n\nHeavy-duty chuck system\n\nConstruction & Key Features\n\nOne-piece cast iron bed, stress-relieved through high-temperature annealing and vibration treatment for long-term stability and zero deformation.\n\nPrecision motion system using Taiwan Hiwin rails and TBI ballscrews ensures high accuracy, rigidity, and extended service life.\n\nHigh-torque Yako-driven stepper system delivers smooth acceleration, fast positioning, and consistent cutting performance.\n\nDesigned for production shops, furniture makers, stair builders, column and spindle manufacturers",
+      "status": "active",
+      "product_type": "goods",
+      "line": "Summit"
+    },
+    {
+      "item_id": "3290386000000955001",
+      "name": "Elevate CNC BoreLine DH",
+      "sku": "ECN-BORELINE-DH",
+      "price": 11000.0,
+      "description": "Elevate CNC BoreLine DH – Double-Head Side Hole Machine\n\nThe BoreLine DH is a purpose-built, double-head side hole drilling machine designed for high-accuracy, high-repeatability horizontal drilling operations in cabinet, furniture, and panel-based manufacturing.\n\nThis machine is optimized for production environments where speed, consistency, and precise hole placement are critical.\n\nMachine Type\n\nDouble-head side hole drilling machine\n\nWorking Capacity\n\nMaximum operating stroke: 110 in\n\nOverall Machine Dimensions\n\nLength: 130 in\n\nWidth: 43 in\n\nHeight: 47 in\n\nSpindle System\n\nDual horizontal drilling spindles\n\nSpindle Power: 3 HP per spindle\n\nNumber of Spindles: 2\n\nMaximum Spindle Speed: 18,000 RPM\n\nHigh-performance spindle drive system\n\nMotion & Drive System\n\nIndustrial servo motor system\n\nServo power configuration: 1 HP + 0.5 HP\n\nPrecision linear actuation for accurate positioning\n\nLinear Motion Components\n\n20 mm precision linear guide rails on all motion axes\n\nHigh-precision ball screw drive system\n\nWorktable & Fixturing\n\nPVC machining worktable\n\nPneumatic material clamping system using large-format air cylinders\n\nPneumatics & Sensors\n\nIndustrial pneumatic system for clamping and actuation\n\nLaser probe for position detection and referencing\n\nIntegrated barcode scanning system for automated workflow compatibility\n\nLubrication & Safety\n\nAutomatic centralized lubrication system\n\nIntegrated limit and safety protection system\n\nElectrical & Control\n\nDedicated CNC control system optimized for drilling operations\n\nIndustrial-grade electrical components\n\nMachine wiring built to CE standards\n\nMachine Weight\n\nApprox. 1,100 lbs\n\nWarranty & Support\n\n1-Year Limited Warranty\n\nRemote technical support included",
+      "status": "active",
+      "product_type": "goods",
+      "line": "BoreLine"
+    },
+    {
+      "item_id": "3290386000000901011",
+      "name": "Elevate CNC Ridge 4×8",
+      "sku": "ECN-RIDGE-48-STD",
+      "price": 8800.0,
+      "description": "Elevate CNC Ridge Series – Extrusion-Based CNC Router\n\nThe Ridge Series is an extrusion-based CNC router designed for serious hobbyists, small shops, and growing businesses that need accuracy, flexibility, and dependable performance without stepping into a full industrial platform.\n\nIncluded Features\n\nRigid aluminum extrusion frame construction\n\nPrecision linear motion system on all axes\n\nRack and pinion drive system on X and Y axes\n\nPrecision ball screw–driven Z axis\n\nHigh-torque stepper motor system (multiple configurations available)\n\nDigital motor drivers for smooth motion control\n\nCNC control system powered by Centroid CNC12\n\nModular design allowing future upgrades and expansion\n\nWorking Area\n\nX Axis: 49.5 in\n\nY Axis: 98.75 in\n\nZ Axis: 8 in (12 in optional, minus spoilboard thickness)\n\nOverall Machine Dimensions\n\nLength: 115.5 in\n\nWidth: 67 in (77 in with extended gantry option)\n\nHeight: 43.4 in\n\nHeight with optional leg kit: 77.5 in\n\nPerformance\n\nMaximum Cutting Speed:\n\nUp to 250 IPM (standard configuration)\n\nUp to 500 IPM (high-torque configuration)\n\nMaximum Rapid Speed:\n\nUp to 500 IPM (standard configuration)\n\nUp to 1,000 IPM (high-torque configuration)\n\nDrive System\n\nX / Y Axis: Rack and pinion\n\nZ Axis: Precision ball screw\n\nResolution\n\nX / Y Axis: 0.0005 in\n\nZ Axis: 0.0002 in\n\nElectrical Requirements\n\n220V single-phase\n\n30A breaker recommended\n\nMachine Weight\n\n483 lbs (bench-mounted configuration)\n\n616 lbs (with optional leg kit)\n\nWarranty & Support\n\n1-Year Limited Warranty\n\nRemote technical support included",
+      "status": "active",
+      "product_type": "goods",
+      "line": "Ridge"
+    },
+    {
+      "item_id": "3290386000000983782",
+      "name": "Elevate CNC Ascent 5x10",
+      "sku": "ECN-ASCENT-510-STD",
+      "price": 7500.0,
+      "description": "Elevate CNC Ascent Series – Entry-Level CNC Router\n\nThe Ascent Series is an entry-level CNC router designed for hobbyists, makers, and small shops looking for an affordable, capable CNC system that operates entirely on standard household power while maintaining accuracy and rigidity.\n\nAscent is built as a true CNC platform—not a kit—while remaining accessible for users who do not require industrial electrical service.\n\nIncluded Features\n\nWelded steel lower frame for rigidity and stability\n\nAluminum extrusion upper frame and gantry assembly\n\nStraight tooth rack and pinion drive system on X and Y axes\n\nPrecision ball screw–driven Z axis\n\nNEMA 23 stepper motors rated at 325 oz-in\n\nMatched digital motor drivers\n\nStandard router-style spindle mount\n\nIntegrated relay-controlled router on/off switching\n\nCNC control system powered by FluidNC\n\nDesigned for operation on standard 110V power\n\nSpindle / Router\n\n2.5 HP Skil router included\n\nRouter-based spindle system allows full machine operation on 110V power\n\nWorking Area\n\nX Axis: 60 in\n\nY Axis: 120 in\n\nOverall Machine Dimensions\n\nLength: 138 in\n\nWidth: 88 in\n\nHeight: 48 in\n\nDrive System\n\nX / Y Axis: Straight tooth rack and pinion\n\nZ Axis: Precision ball screw\n\nElectrical Requirements\n\n110V single-phase\n\nStandard household outlet\n\nWarranty & Support\n\n1-Year Limited Warranty\n\nRemote technical support included",
+      "status": "active",
+      "product_type": "goods",
+      "line": "Ascent"
+    },
+    {
+      "item_id": "3290386000000983731",
+      "name": "Elevate CNC Ridge 4×4",
+      "sku": "ECN-RIDGE-44-STD",
+      "price": 7200.0,
+      "description": "Elevate CNC Ridge Series – Extrusion-Based CNC Router (4×4)\n\nThe Ridge Series is an extrusion-based CNC router designed for serious hobbyists, small shops, and growing businesses that need accuracy, flexibility, and dependable performance without stepping into a full industrial platform.\n\nIncluded Features\n\nRigid aluminum extrusion frame construction\n\nPrecision linear motion system on all axes\n\nRack and pinion drive system on X and Y axes\n\nPrecision ball screw–driven Z axis\n\nHigh-torque stepper motor system (multiple configurations available)\n\nDigital motor drivers for smooth motion control\n\nCNC control system powered by Centroid CNC12\n\nModular design allowing future upgrades and expansion\n\nWorking Area\n\nX Axis: 49.5 in\n\nY Axis: 49.5 in\n\nZ Axis: 8 in (12 in optional, minus spoilboard thickness)\n\nOverall Machine Dimensions\n\nLength: 67.5 in\n\nWidth: 67 in (77 in with extended gantry option)\n\nHeight: 43.4 in\n\nHeight with optional leg kit: 77.5 in\n\nPerformance\n\nMaximum Cutting Speed\n\nUp to 250 IPM (standard configuration)\n\nUp to 500 IPM (high-torque configuration)\n\nMaximum Rapid Speed\n\nUp to 500 IPM (standard configuration)\n\nUp to 1,000 IPM (high-torque configuration)\n\nDrive System\n\nX / Y Axis: Rack and pinion\n\nZ Axis: Precision ball screw\n\nResolution\n\nX / Y Axis: 0.0005 in\n\nZ Axis: 0.0002 in\n\nElectrical Requirements\n\n220V single-phase\n\n30A breaker recommended\n\nMachine Weight\n\n483 lbs (bench-mounted configuration)\n\n616 lbs (with optional leg kit)\n\nWarranty & Support\n\n1-Year Limited Warranty\n\nRemote technical support included",
+      "status": "active",
+      "product_type": "goods",
+      "line": "Ridge"
+    },
+    {
+      "item_id": "3290386000000983813",
+      "name": "Elevate CNC Ascent 4x8",
+      "sku": "ECN-ASCENT-48-STD",
+      "price": 6500.0,
+      "description": "Elevate CNC Ascent Series – Entry-Level CNC Router (4×8)\n\nThe Ascent Series is an entry-level CNC router designed for hobbyists, makers, and small shops looking for an affordable, capable CNC system that operates entirely on standard household power while maintaining accuracy and rigidity.\n\nAscent is built as a true CNC platform—not a kit—while remaining accessible for users who do not require industrial electrical service.\n\nIncluded Features\n\nWelded steel lower frame for rigidity and stability\n\nAluminum extrusion upper frame and gantry assembly\n\nStraight tooth rack and pinion drive system on X and Y axes\n\nPrecision ball screw–driven Z axis\n\nNEMA 23 stepper motors rated at 325 oz-in\n\nMatched digital motor drivers\n\nStandard router-style spindle mount\n\nIntegrated relay-controlled router on/off switching\n\nCNC control system powered by FluidNC\n\nDesigned for operation on standard 110V power\n\nSpindle / Router\n\n2.5 HP Skil router included\n\nRouter-based spindle system allows full machine operation on 110V power\n\nWorking Area\n\nX Axis: 48 in\n\nY Axis: 96 in\n\nOverall Machine Dimensions\n\nLength: 110 in\n\nWidth: 70 in\n\nHeight: 38 in\n\nDrive System\n\nX / Y Axis: Straight tooth rack and pinion\n\nZ Axis: Precision ball screw\n\nElectrical Requirements\n\n110V single-phase\n\nStandard household outlet\n\nWarranty & Support\n\n1-Year Limited Warranty\n\nRemote technical support included",
+      "status": "active",
+      "product_type": "goods",
+      "line": "Ascent"
+    },
+    {
+      "item_id": "3290386000000983834",
+      "name": "Elevate CNC Ascent 4x4",
+      "sku": "ECN-ASCENT-44-STD",
+      "price": 5500.0,
+      "description": "Elevate CNC Ascent Series – Entry-Level CNC Router (4×4)\n\nThe Ascent Series is an entry-level CNC router designed for hobbyists, makers, and small shops looking for an affordable, capable CNC system that operates entirely on standard household power while maintaining accuracy and rigidity.\n\nAscent is built as a true CNC platform—not a kit—while remaining accessible for users who do not require industrial electrical service.\n\nIncluded Features\n\nWelded steel lower frame for rigidity and stability\n\nAluminum extrusion upper frame and gantry assembly\n\nStraight tooth rack and pinion drive system on X and Y axes\n\nPrecision ball screw–driven Z axis\n\nNEMA 23 stepper motors rated at 325 oz-in\n\nMatched digital motor drivers\n\nStandard router-style spindle mount\n\nIntegrated relay-controlled router on/off switching\n\nCNC control system powered by FluidNC\n\nDesigned for operation on standard 110V power\n\nSpindle / Router\n\n2.5 HP Skil router included\n\nRouter-based spindle system allows full machine operation on 110V power\n\nWorking Area\n\nX Axis: 48 in\n\nY Axis: 48 in\n\nOverall Machine Dimensions\n\nLength: 55 in\n\nWidth: 35 in\n\nHeight: 19 in\n\nDrive System\n\nX / Y Axis: Straight tooth rack and pinion\n\nZ Axis: Precision ball screw\n\nElectrical Requirements\n\n110V single-phase\n\nStandard household outlet\n\nWarranty & Support\n\n1-Year Limited Warranty\n\nRemote technical support included",
+      "status": "active",
+      "product_type": "goods",
+      "line": "Ascent"
+    },
+    {
+      "item_id": "3290386000001090040",
+      "name": "Elevate CNC Prime",
+      "sku": "ECN-PL-PRIME-44",
+      "price": 4500.0,
+      "description": "Elevate CNC Prime – Production-Grade CNC Plasma Table (4×4)\n\nThe Elevate CNC Prime is a production-ready CNC plasma table designed for shops that need higher speed, greater rigidity, and automated height control while still operating on standard household power.\n\nPrime bridges the gap between hobby machines and industrial systems, offering a fully welded steel frame, rack-and-pinion motion on all axes, and integrated torch height control (THC) for consistent, repeatable cuts at high travel speeds.\n\nIncluded Features\n\nFully welded steel frame for maximum rigidity and long-term durability\n\nAluminum extrusion gantry system for strength with reduced moving mass\n\nRack and pinion drive on X, Y, and Z axes\n\nMotorized Z-axis with floating Z touch-off\n\nIntegrated Torch Height Control (THC) for automatic cut height adjustment\n\nCapable of travel speeds up to 800 IPM\n\nDesigned for continuous use in production environments\n\nTable Configuration Options\n\nStandard slat bed configuration\n\nOptional water table available for an additional $500\n\nControl System & Connectivity\n\nPowered by FluidNC CNC control system\n\nWi-Fi compatible for wireless connection\n\nWeb-based control interface accessible from phone, tablet, or computer\n\nSoftware & File Compatibility\n\nCompatible with most CNC plasma CAD/CAM software\n\nAccepts standard G-code files generated by common CAM programs\n\nWorking Area\n\nX Axis: 48 in\n\nY Axis: 48 in\n\nDrive System\n\nX / Y / Z Axes: Rack and pinion drive\n\nZ Axis: Motorized with floating Z touch-off and THC\n\nPerformance\n\nMaximum travel speed up to 800 inches per minute (IPM)\n\nOptimized for smooth motion, fast rapids, and consistent cut quality\n\nPlasma Cutter Compatibility\n\nCompatible with blowback-start plasma cutters\n\nPlasma cutter must provide a torch trigger interface\n\nHigh-frequency (HF) start plasma cutters are NOT supported\n\nPlasma power requirements depend on the selected plasma unit\n\nElectrical Requirements\n\nCNC system operates on standard 110V household power\n\nPlasma cutter power requirements vary by model\n\nWarranty & Support\n\n1-Year Limited Warranty\n\nRemote technical support included",
+      "status": "active",
+      "product_type": "goods",
+      "line": "Prime"
+    },
+    {
+      "item_id": "3290386000001090029",
+      "name": "Elevate CNC ION 4x4",
+      "sku": "ECN-PL-ION-44",
+      "price": 3000.0,
+      "description": "The Elevate CNC Ion is a mid-tier CNC plasma table designed for serious hobbyists and light production users who want improved cut consistency, stronger motion components, and automatic material referencing while maintaining a compact 4×4 footprint.\n\nIon builds on the Spark platform with larger motors, stronger drive components, and a powered Z-axis with floating touch-off, making it better suited for repeat cutting and thicker materials.\n\nIncluded Features\n\nFully welded all-steel frame and gantry for increased rigidity\n\nNEMA 23 stepper motor system with matched motor drivers\n\n20 mm wide timing belts on X and Y axes for higher torque capacity\n\nBelt-driven linear motion for smooth and quiet operation\n\nMotorized Z-axis with floating Z touch-off for automatic material sensing\n\nImproved accuracy and repeatability compared to entry-level systems\n\nCompact footprint ideal for garages and small fabrication shops\n\nControl & User Interface\n\nFluidNC-based CNC control system\n\nWi-Fi enabled for wireless file transfer and control\n\nBluetooth compatible for mobile device connectivity\n\nWeb-based control interface accessible from phone, tablet, or computer\n\nNo dedicated control computer required during operation\n\nSoftware & File Compatibility\n\nCompatible with most CNC plasma CAD/CAM software\n\nAccepts standard G-code files\n\nFile transfer supported via:\n\nWi-Fi\n\nUSB\n\nBluetooth\n\nWorking Area\n\nX Axis: 48 in\n\nY Axis: 48 in\n\nOverall Machine Dimensions\n\nLength: 72 in\n\nWidth: 63 in\n\nHeight: 44 in\n\nDrive System\n\nX / Y Axis: Belt-driven linear motion (20 mm belts)\n\nZ Axis: Motorized Z-axis with floating Z touch-off\n\nPlasma Cutter Compatibility\n\nCompatible with blowback-start plasma cutters\n\nPlasma cutters must provide a torch trigger interface\n\nHigh-frequency (HF) start plasma cutters are NOT supported\n\nElectrical Requirements\n\nStandard household power for CNC control system\n\nPlasma cutter power requirements depend on selected unit\n\nWarranty & Support\n\n1-Year Limited Warranty\n\nRemote technical support included",
+      "status": "active",
+      "product_type": "goods",
+      "line": "ION"
+    },
+    {
+      "item_id": "3290386000000983958",
+      "name": "Elevate CNC Spark 4x4",
+      "sku": "ECN-SPARK-44-STD",
+      "price": 1500.0,
+      "description": "Elevate CNC Spark – Entry-Level CNC Plasma Table (4×4)\n\nThe Spark is an entry-level CNC plasma system designed for hobbyists, makers, and small shops looking for an affordable, compact plasma table with simple operation and flexible offline control.\n\nSpark is built as a real CNC platform with a rigid hybrid frame while remaining approachable for first-time CNC plasma users.\n\nIncluded Features\n\nWelded steel lower frame for stability\n\nAluminum extrusion upper frame and gantry assembly\n\nNEMA 17 stepper motor system with matched motor drivers\n\nManual Z-axis height adjustment\n\nIntegrated touch-screen CNC control\n\nOffline operation with onboard controller\n\n32-bit core control board for smooth and stable motion\n\nCompact footprint ideal for garages and small shops\n\nControl & User Interface\n\n3.5-inch full-color touch screen display\n\nBuilt-in controller allows offline cutting\n\nFiles loaded via TF card for stand-alone operation\n\nNo computer required during operation\n\nSoftware & File Compatibility\n\nCompatible with common CNC and laser software platforms\n\nSupported file formats include:\nJPG, PNG, BMP, G-code, GIF, SVG, NC, GC\n\nData transfer supported via:\nWi-Fi, USB cable, mobile app, or TF card\n\nWorking Area\n\nX Axis: 48 in\n\nY Axis: 48 in\n\nOverall Machine Dimensions\n\nLength: 72 in\n\nWidth: 63 in\n\nHeight: 12 in\n\nDrive System\n\nX / Y Axis: Belt-driven linear motion\n\nZ Axis: Manual adjustment\n\nPlasma Compatibility\n\nCompatible with blowback-start plasma cutters\n\nPlasma units must provide a torch trigger port\n\nHigh-frequency (HF) start plasma cutters are NOT supported\n\nOptional Add-Ons\n\n5W diode laser module for light engraving and marking applications\n\nElectrical Requirements\n\nStandard household power for CNC control\n\nPlasma cutter power requirements depend on selected unit\n\nWarranty & Support\n\n1-Year Limited Warranty\n\nRemote technical support included",
+      "status": "active",
+      "product_type": "goods",
+      "line": "Spark"
+    },
+    {
+      "item_id": "3290386000000983927",
+      "name": "Elevate CNC Spark 3x4",
+      "sku": "ECN-SPARK-34-STD",
+      "price": 1375.0,
+      "description": "Elevate CNC Spark – Entry-Level CNC Plasma Table (3×4)\n\nThe Spark is an entry-level CNC plasma system designed for hobbyists, makers, and small shops looking for an affordable, compact plasma table with simple operation and flexible offline control.\n\nSpark is built as a real CNC platform with a rigid hybrid frame while remaining approachable for first-time CNC plasma users.\n\nIncluded Features\n\nWelded steel lower frame for stability\n\nAluminum extrusion upper frame and gantry assembly\n\nNEMA 17 stepper motor system with matched motor drivers\n\nManual Z-axis height adjustment\n\nIntegrated touch-screen CNC control\n\nOffline operation with onboard controller\n\n32-bit core control board for smooth and stable motion\n\nCompact footprint ideal for garages and small shops\n\nControl & User Interface\n\n3.5-inch full-color touch screen display\n\nBuilt-in controller allows offline cutting\n\nFiles loaded via TF card for stand-alone operation\n\nNo computer required during operation\n\nSoftware & File Compatibility\n\nCompatible with common CNC and laser software platforms\n\nSupported file formats include:\nJPG, PNG, BMP, G-code, GIF, SVG, NC, GC\n\nData transfer supported via:\nWi-Fi, USB cable, mobile app, or TF card\n\nWorking Area\n\nX Axis: 36 in\n\nY Axis: 48 in\n\nOverall Machine Dimensions\n\nLength: 72 in\n\nWidth: 47 in\n\nHeight: 12 in\n\nDrive System\n\nX / Y Axis: Belt-driven linear motion\n\nZ Axis: Manual adjustment\n\nPlasma Compatibility\n\nCompatible with blowback-start plasma cutters\n\nPlasma units must provide a torch trigger port\n\nHigh-frequency (HF) start plasma cutters are NOT supported\n\nOptional Add-Ons\n\n5W diode laser module for light engraving and marking applications\n\nElectrical Requirements\n\nStandard household power for CNC control\n\nPlasma cutter power requirements depend on selected unit\n\nWarranty & Support\n\n1-Year Limited Warranty\n\nRemote technical support included",
+      "status": "active",
+      "product_type": "goods",
+      "line": "Spark"
+    },
+    {
+      "item_id": "3290386000000983989",
+      "name": "Elevate CNC Spark 3x3",
+      "sku": "ECN-SPARK-33-STD",
+      "price": 1275.0,
+      "description": "Elevate CNC Spark – Entry-Level CNC Plasma Table (3×3)\n\nThe Spark is an entry-level CNC plasma system designed for hobbyists, makers, and small shops looking for an affordable, compact plasma table with simple operation and flexible offline control.\n\nSpark is built as a real CNC platform with a rigid hybrid frame while remaining approachable for first-time CNC plasma users.\n\nIncluded Features\n\nWelded steel lower frame for stability\n\nAluminum extrusion upper frame and gantry assembly\n\nNEMA 17 stepper motor system with matched motor drivers\n\nManual Z-axis height adjustment\n\nIntegrated touch-screen CNC control\n\nOffline operation with onboard controller\n\n32-bit core control board for smooth and stable motion\n\nCompact footprint ideal for garages and small shops\n\nControl & User Interface\n\n3.5-inch full-color touch screen display\n\nBuilt-in controller allows offline cutting\n\nFiles loaded via TF card for stand-alone operation\n\nNo computer required during operation\n\nSoftware & File Compatibility\n\nCompatible with common CNC and laser software platforms\n\nSupported file formats include:\nJPG, PNG, BMP, G-code, GIF, SVG, NC, GC\n\nData transfer supported via:\nWi-Fi, USB cable, mobile app, or TF card\n\nWorking Area\n\nX Axis: 36 in\n\nY Axis: 36 in\n\nOverall Machine Dimensions\n\nLength: 58 in\n\nWidth: 47 in\n\nHeight: 12 in\n\nDrive System\n\nX / Y Axis: Belt-driven linear motion\n\nZ Axis: Manual adjustment\n\nPlasma Compatibility\n\nCompatible with blowback-start plasma cutters\n\nPlasma units must provide a torch trigger port\n\nHigh-frequency (HF) start plasma cutters are NOT supported\n\nOptional Add-Ons\n\n5W diode laser module for light engraving and marking applications\n\nElectrical Requirements\n\nStandard household power for CNC control\n\nPlasma cutter power requirements depend on selected unit\n\nWarranty & Support\n\n1-Year Limited Warranty\n\nRemote technical support included",
+      "status": "active",
+      "product_type": "goods",
+      "line": "Spark"
+    },
+    {
+      "item_id": "3290386000000988020",
+      "name": "Elevate CNC Spark 2x4",
+      "sku": "ECN-SPARK-24-STD",
+      "price": 1200.0,
+      "description": "Elevate CNC Spark – Entry-Level CNC Plasma Table (2×4)\n\nThe Spark is an entry-level CNC plasma system designed for hobbyists, makers, and small shops looking for an affordable, compact plasma table with simple operation and flexible offline control.\n\nSpark is built as a real CNC platform with a rigid hybrid frame while remaining approachable for first-time CNC plasma users.\n\nIncluded Features\n\nWelded steel lower frame for stability\n\nAluminum extrusion upper frame and gantry assembly\n\nNEMA 17 stepper motor system with matched motor drivers\n\nManual Z-axis height adjustment\n\nIntegrated touch-screen CNC control\n\nOffline operation with onboard controller\n\n32-bit core control board for smooth and stable motion\n\nCompact footprint ideal for garages and small shops\n\nControl & User Interface\n\n3.5-inch full-color touch screen display\n\nBuilt-in controller allows offline cutting\n\nFiles loaded via TF card for stand-alone operation\n\nNo computer required during operation\n\nSoftware & File Compatibility\n\nCompatible with common CNC and laser software platforms\n\nSupported file formats include:\nJPG, PNG, BMP, G-code, GIF, SVG, NC, GC\n\nData transfer supported via:\nWi-Fi, USB cable, mobile app, or TF card\n\nWorking Area\n\nX Axis: 24 in\n\nY Axis: 48 in\n\nOverall Machine Dimensions\n\nLength: 58 in\n\nWidth: 31 in\n\nHeight: 12 in\n\nDrive System\n\nX / Y Axis: Belt-driven linear motion\n\nZ Axis: Manual adjustment\n\nPlasma Compatibility\n\nCompatible with blowback-start plasma cutters\n\nPlasma units must provide a torch trigger port\n\nHigh-frequency (HF) start plasma cutters are NOT supported\n\nOptional Add-Ons\n\n5W diode laser module for light engraving and marking applications\n\nElectrical Requirements\n\nStandard household power for CNC control\n\nPlasma cutter power requirements depend on selected unit\n\nWarranty & Support\n\n1-Year Limited Warranty\n\nRemote technical support included",
+      "status": "active",
+      "product_type": "goods",
+      "line": "Spark"
+    },
+    {
+      "item_id": "3290386000000983871",
+      "name": "Elevate CNC Spark 2x3",
+      "sku": "ECN-SPARK-23-STD",
+      "price": 1050.0,
+      "description": "Elevate CNC Spark – Entry-Level CNC Plasma Table (2×3)\n\nThe Spark is an entry-level CNC plasma system designed for hobbyists, makers, and small shops looking for an affordable, compact plasma table with simple operation and flexible offline control.\n\nSpark is built as a real CNC platform with a rigid hybrid frame while remaining approachable for first-time CNC plasma users.\n\nIncluded Features\n\nWelded steel lower frame for stability\n\nAluminum extrusion upper frame and gantry assembly\n\nNEMA 17 stepper motor system with matched motor drivers\n\nManual Z-axis height adjustment\n\nIntegrated touch-screen CNC control\n\nOffline operation with onboard controller\n\n32-bit core control board for smooth and stable motion\n\nCompact footprint ideal for garages and small shops\n\nControl & User Interface\n\n3.5-inch full-color touch screen display\n\nBuilt-in controller allows offline cutting\n\nFiles loaded via TF card for stand-alone operation\n\nNo computer required during operation\n\nSoftware & File Compatibility\n\nCompatible with common CNC and laser software platforms\n\nSupported file formats include:\nJPG, PNG, BMP, G-code, GIF, SVG, NC, GC\n\nData transfer supported via:\nWi-Fi, USB cable, mobile app, or TF card\n\nWorking Area\n\nX Axis: 24 in\n\nY Axis: 36 in\n\nOverall Machine Dimensions\n\nLength: 44 in\n\nWidth: 31 in\n\nHeight: 12 in\n\nDrive System\n\nX / Y Axis: Belt-driven linear motion\n\nZ Axis: Manual adjustment\n\nPlasma Compatibility\n\nCompatible with blowback-start plasma cutters\n\nPlasma units must provide a torch trigger port\n\nHigh-frequency (HF) start plasma cutters are NOT supported\n\nOptional Add-Ons\n\n5W diode laser module for light engraving and marking applications\n\nElectrical Requirements\n\nStandard household power for CNC control\n\nPlasma cutter power requirements depend on selected unit\n\nWarranty & Support\n\n1-Year Limited Warranty\n\nRemote technical support included",
+      "status": "active",
+      "product_type": "goods",
+      "line": "Spark"
+    },
+    {
+      "item_id": "3290386000000983882",
+      "name": "Elevate CNC Spark 2x2",
+      "sku": "ECN-SPARK-22-STD",
+      "price": 950.0,
+      "description": "Elevate CNC Spark – Entry-Level CNC Plasma Table (2×2)\n\nThe Spark is an entry-level CNC plasma system designed for hobbyists, makers, and small shops looking for an affordable, compact plasma table with simple operation and flexible offline control.\n\nSpark is built as a real CNC platform with a rigid hybrid frame while remaining approachable for first-time CNC plasma users.\n\nIncluded Features\n\nWelded steel lower frame for stability\n\nAluminum extrusion upper frame and gantry assembly\n\nNEMA 17 stepper motor system with matched motor drivers\n\nManual Z-axis height adjustment\n\nIntegrated touch-screen CNC control\n\nOffline operation with onboard controller\n\n32-bit core control board for smooth and stable motion\n\nCompact footprint ideal for garages and small shops\n\nControl & User Interface\n\n3.5-inch full-color touch screen display\n\nBuilt-in controller allows offline cutting\n\nFiles loaded via TF card for stand-alone operation\n\nNo computer required during operation\n\nSoftware & File Compatibility\n\nCompatible with common CNC and laser software platforms\n\nSupported file formats include:\nJPG, PNG, BMP, G-code, GIF, SVG, NC, GC\n\nData transfer supported via:\nWi-Fi, USB cable, mobile app, or TF card\n\nWorking Area\n\nX Axis: 24 in\n\nY Axis: 24 in\n\nOverall Machine Dimensions\n\nLength: 36 in\n\nWidth: 31 in\n\nHeight: 12 in\n\nDrive System\n\nX / Y Axis: Belt-driven linear motion\n\nZ Axis: Manual adjustment\n\nPlasma Compatibility\n\nCompatible with blowback-start plasma cutters\n\nPlasma units must provide a torch trigger port\n\nHigh-frequency (HF) start plasma cutters are NOT supported\n\nOptional Add-Ons\n\n5W diode laser module for light engraving and marking applications\n\nElectrical Requirements\n\nStandard household power for CNC control\n\nPlasma cutter power requirements depend on selected unit\n\nWarranty & Support\n\n1-Year Limited Warranty\n\nRemote technical support included",
+      "status": "active",
+      "product_type": "goods",
+      "line": "Spark"
+    },
+    {
+      "item_id": "3290386000001156053",
+      "name": "Bestarc Cut60XP",
+      "sku": "",
+      "price": 225.0,
+      "description": "[Powerful Cutting Ability] Dual voltage 110/220V good for home, workshop and hardware shop use. Professional performance 1/2” clean cuts on Iron, Steel aluminum and copper with Inverter IGBT technology. Very powerful for DIY and heavy duty project. The Maximum cutting thickness is recommended to 9/16” (14mm)@35A 110V 50PSI; 4/5” (20mm)@60A 220V 65PSI. Dry and compressed air is required. Power breaker up to 40A@110V 35A; Up to 30A@220V 60A.\n[Blow Back Pilot Arc]: bestarc plasma cutter features a blow back technology, Non-high-frequency pilot arc prevents hf signal interference and improves cutting stability. Blow-back pilot arc technology initiates the arc without touching the metal, while low-frequency arc maintenance reduces electrode burn during non-cutting, extending electrode and nozzle life.\n[Air Sensor Technology]: The air sensor built into the machine displays the air pressure on the front panel of the machine. Users can adjust the air pressure manually through the air regulator (air pressure cannot be automatically adjusted). An air filter is installed at the back of the machine, equipped with a quick-connect 1/4 NPT air connector, ready for use right out of the box. Once connected to an air compressor, the recommended air pressure should be within 70 PSI, with a flow rate of 250 liters per minute.\n[LED Screen Display]: The screen centrally displays parameters such as air pressure, voltage, and current, allowing users to understand the equipment status in real-time and adjust operations in a timely manner, improving operational efficiency. If the plasma cutter cannot work, the screen comes with an error code, making it easy to find out the problems.\n[2T/4T/PA/PT Function]: Post time adjustable from 3-15s to cool the torch. Adjust the cooling time of the torch head to extend the service life of consumables. We recommend a cooling time of 4-8 seconds. The PA function allows pilot arc timing adjustment up to 15s; longer times are ideal for mesh cutting, shorter times help extend consumable life. 2T/4T automatic cutting release your finger.2T is a semi-automatic cutting control, and 4T is an automatic cutting control.",
+      "status": "active",
+      "product_type": "goods",
+      "line": "Plasma"
+    }
+  ],
+  "accessories": [
+    {
+      "item_id": "3290386000000296001",
+      "name": "Remote Jog Wheel Pendant",
+      "sku": "9606",
+      "price": 299.0,
+      "description": "Take the control to where the work is! A game changing tool, the Centroid Wireless MPG handwheel CNC Control pendant allows the operator to set up jobs and tools conveniently and precisely remotely. No software or drivers to install. Plug and Play with Centroid CNC12 Pro CNC software, just plug in the included USB transmitter/receiver and start using it! Perfect for all types of Mills, Lathes, Routers and other specialty CNC machines. Control up to Six Axes from the palm of your hand! Multiple units can be used in the same location without issue.\n\n- On-the-fly Feed Rate override\n- On-the-fly Spindle Speed override\n- 6 axis DRO display (4 axis on main screen, 2 axis on sub menu)\n- 6 axis MPG and continuous jogging control\n- Robust wireless communication\n- No software drivers to install\n- Free Tech Support via CNC Forum\n- Hanger bracket mount w/ magnets\n- Smooth motion\n- Long range wireless\n- Robust CENTROID developed drivers\n- Takes 2 AA batteries \n- run time approx. 1 month\n- USB Plug and Play Transmitter / Receiver\n- Rubber case protector\n- Tactile Feedback domed buttons \n- w/ gold plated contacts\n- High quality 3M Overlay",
+      "status": "active",
+      "product_type": "goods"
+    }
+  ],
+  "services": [
+    {
+      "item_id": "3290386000001209001",
+      "name": "3.5% Card Processing Fee",
+      "sku": "",
+      "price": 3.5,
+      "description": "3.5% Card Processing Fee",
+      "status": "active",
+      "product_type": "service"
+    },
+    {
+      "item_id": "3290386000001169001",
+      "name": "Spring Sale Discount",
+      "sku": "",
+      "price": -1000.0,
+      "description": "",
+      "status": "active",
+      "product_type": "goods"
+    }
+  ]
+}

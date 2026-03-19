@@ -8,6 +8,8 @@
     "preview": "astro preview"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.80.0",
+    "@astrojs/netlify": "^5.5.4",
     "astro": "^4.16.18"
   }
 }
