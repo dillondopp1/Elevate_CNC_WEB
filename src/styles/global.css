@@ -363,10 +363,16 @@ a { color: inherit; text-decoration: none; }
 .hero-bg {
   position: absolute;
   inset: 0;
-  background-image: url('/images/hero-bg.jpg');
-  background-size: cover;
-  background-position: center;
-  opacity: 0.35;
+  overflow: hidden;
+  opacity: 0.7;
+}
+.hero-bg video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
 }
 .hero-overlay {
   position: absolute;
@@ -510,7 +516,7 @@ a { color: inherit; text-decoration: none; }
 }
 .category-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 16px;
 }
 .category-card {

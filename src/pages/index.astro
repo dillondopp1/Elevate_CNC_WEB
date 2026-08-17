@@ -14,13 +14,17 @@ const softwareLogos = [
 
   <!-- ====== HERO ====== -->
   <section class="hero">
-    <div class="hero-bg"></div>
+    <div class="hero-bg">
+      <video autoplay muted loop playsinline aria-hidden="true">
+        <source src="/videos/hero.mp4" type="video/mp4" />
+      </video>
+    </div>
     <div class="hero-overlay"></div>
     <div class="hero-content container">
       <p class="hero-label">// Shelley, Idaho — USA Designed & Supported</p>
       <h1 class="hero-title">CNC Machinery,<br />Sales &amp; Service</h1>
       <p class="hero-sub">
-        Industrial-grade CNC Routers, Plasma Tables &amp; Laser Systems —
+        Industrial-grade CNC Routers &amp; Plasma Tables —
         built for real shops, backed by real support.
       </p>
       <div class="hero-actions">
@@ -67,7 +71,7 @@ const softwareLogos = [
       <h2 class="section-title">What Can We Build<br />For Your Shop?</h2>
       <div class="title-rule"></div>
       <p class="section-sub">
-        From wood routing to plasma cutting to laser engraving — we have the machine
+        From wood routing to plasma cutting — we have the machine
         and the expertise to match your production needs.
       </p>
       <div class="category-grid">
@@ -86,15 +90,6 @@ const softwareLogos = [
             <p class="cat-label">Machines</p>
             <h3 class="cat-name">Plasma Tables</h3>
             <p class="cat-desc">Steel, aluminum &amp; sheet metal</p>
-            <span class="cat-explore">Explore →</span>
-          </div>
-        </a>
-        <a href="/machines#lasers" class="category-card cat-laser">
-          <div class="cat-bg" style="background-image: url('/images/cat-laser.jpg')"></div>
-          <div class="cat-content">
-            <p class="cat-label">Machines</p>
-            <h3 class="cat-name">Laser Systems</h3>
-            <p class="cat-desc">Cutting &amp; engraving, CO₂ &amp; fiber</p>
             <span class="cat-explore">Explore →</span>
           </div>
         </a>
@@ -138,7 +133,7 @@ const softwareLogos = [
             <div class="spec-item"><span class="spec-label">Vacuum</span><span class="spec-val">6HP Regenerative Pump</span></div>
             <div class="spec-item"><span class="spec-label">Frame</span><span class="spec-val">Welded Steel</span></div>
             <div class="spec-item"><span class="spec-label">Comm</span><span class="spec-val">Ethernet</span></div>
-            <div class="spec-item"><span class="spec-label">Price</span><span class="spec-val spec-price">From $18,400</span></div>
+            <div class="spec-item"><span class="spec-label">Price</span><span class="spec-val spec-price">From $15,600</span></div>
           </div>
           <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:32px;">
             <a href="#contact" class="btn btn-primary">Get a Quote</a>
@@ -202,8 +197,8 @@ const softwareLogos = [
         <div class="package-card">
           <p class="pkg-series">Ascent Series</p>
           <h3 class="pkg-name">Starter</h3>
-          <div class="pkg-price"><span>$</span>15,000</div>
-          <p class="pkg-per">starting price &nbsp;·&nbsp; <a href="/financing" style="color:var(--accent)">Est. $304/mo</a></p>
+          <div class="pkg-price"><span>$</span>5,500</div>
+          <p class="pkg-per">starting price &nbsp;·&nbsp; <a href="/financing" style="color:var(--accent)">Est. $112/mo</a></p>
           <p class="pkg-desc">
             Entry-level CNC router for hobbyists, makers, and small shops. Runs on
             standard household power — no electrician required.
@@ -222,8 +217,8 @@ const softwareLogos = [
           <div class="popular-badge">Most Popular</div>
           <p class="pkg-series">Summit Series</p>
           <h3 class="pkg-name">Production</h3>
-          <div class="pkg-price"><span>$</span>18,400</div>
-          <p class="pkg-per">starting price &nbsp;·&nbsp; <a href="/financing" style="color:var(--accent)">Est. $373/mo</a></p>
+          <div class="pkg-price"><span>$</span>15,600</div>
+          <p class="pkg-per">starting price &nbsp;·&nbsp; <a href="/financing" style="color:var(--accent)">Est. $316/mo</a></p>
           <p class="pkg-desc">
             Production-grade router for cabinet shops and sign makers who need
             reliable daily performance and vacuum hold-down.
@@ -241,8 +236,8 @@ const softwareLogos = [
         <div class="package-card">
           <p class="pkg-series">Apex Series</p>
           <h3 class="pkg-name">High Production</h3>
-          <div class="pkg-price"><span>$</span>40,000</div>
-          <p class="pkg-per">starting price &nbsp;·&nbsp; <a href="/financing" style="color:var(--accent)">Est. $811/mo</a></p>
+          <div class="pkg-price"><span>$</span>38,400</div>
+          <p class="pkg-per">starting price &nbsp;·&nbsp; <a href="/financing" style="color:var(--accent)">Est. $779/mo</a></p>
           <p class="pkg-desc">
             Top-tier machine with full automation — built for shops where
             speed, precision, and volume are non-negotiable.
@@ -265,9 +260,9 @@ const softwareLogos = [
           <thead>
             <tr>
               <th>Feature</th>
-              <th>Ascent <span>$15k</span></th>
-              <th class="popular-col">Summit <span>$18.4k</span></th>
-              <th>Apex <span>$40k</span></th>
+              <th>Ascent <span>$5.5k</span></th>
+              <th class="popular-col">Summit <span>$15.6k</span></th>
+              <th>Apex <span>$38.4k</span></th>
             </tr>
           </thead>
           <tbody>
@@ -443,7 +438,7 @@ const softwareLogos = [
             <div class="contact-detail-icon">📞</div>
             <div class="contact-detail-text">
               <strong>Call or Text</strong>
-              <span><a href="tel:+12088675309">(208) 867-5309</a></span>
+              <span><a href="tel:+12085571587">(208) 557-1587</a></span>
             </div>
           </div>
           <div class="contact-detail">
@@ -493,11 +488,10 @@ const softwareLogos = [
             <label for="interest">Interested In</label>
             <select id="interest" name="interest">
               <option value="">Select a machine type...</option>
-              <option>CNC Router — Ascent Series ($15,000)</option>
-              <option>CNC Router — Summit Series ($18,400)</option>
-              <option>CNC Router — Apex Series ($40,000)</option>
+              <option>CNC Router — Ascent Series ($5,500)</option>
+              <option>CNC Router — Summit Series ($15,600)</option>
+              <option>CNC Router — Apex Series ($38,400)</option>
               <option>CNC Plasma Table</option>
-              <option>Laser System</option>
               <option>Custom Build / Configuration</option>
               <option>General Inquiry</option>
             </select>
