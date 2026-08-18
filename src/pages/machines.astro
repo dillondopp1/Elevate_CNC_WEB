@@ -52,7 +52,7 @@ const META = {
 };
 ---
 
-<Layout title="CNC Machines" description="Full Elevate CNC machine lineup — Plasma Tables (Spark, ION, Prime), CNC Routers (Ascent, Ridge, Summit, Apex), and Specialty Machines." currentPage="/machines">
+<Layout title="CNC Machines" description="Full Elevate CNC machine lineup — CNC Routers (Ascent, Ridge, Summit, Apex) and Specialty Machines." currentPage="/machines">
 
   <!-- HERO -->
   <div class="page-hero">
@@ -67,7 +67,6 @@ const META = {
   <nav class="cat-nav" aria-label="Machine categories">
     <div class="container">
       <div class="cat-nav-inner">
-        <a href="#plasma"    class="cat-nav-item">Plasma Tables</a>
         <a href="#routers"   class="cat-nav-item">CNC Routers</a>
         <a href="#specialty" class="cat-nav-item">Specialty Machines</a>
         <a href="#custom"    class="cat-nav-item">Custom Builds</a>
@@ -76,77 +75,11 @@ const META = {
   </nav>
 
   <!-- ══════════════════════════════════════════════ -->
-  <!-- PLASMA TABLES                                  -->
-  <!-- ══════════════════════════════════════════════ -->
-  <section id="plasma" class="machine-section" style="background: var(--white);">
-    <div class="container">
-      <p class="section-label">// Plasma Tables</p>
-      <h2 class="section-title">Cut Steel, Aluminum & Sheet Metal</h2>
-      <div class="title-rule"></div>
-      <p class="section-sub">Three tiers — from compact garage tables to production shop setups. Click a series to see available sizes and pricing.</p>
-
-      <div class="series-list">
-        {plasmaSeries.map(seriesKey => {
-          const variants = plasmaByS[seriesKey];
-          const meta     = META[seriesKey];
-          const minPrice = Math.min(...variants.map(v => v.rate));
-          const maxPrice = Math.max(...variants.map(v => v.rate));
-          return (
-            <div class="series-accordion">
-              <button class="series-toggle" aria-expanded="false">
-                <div class="stl">
-                  <span class={`s-badge ${meta.cls}`}>{meta.badge}</span>
-                  <div>
-                    <div class="s-name">{seriesKey}</div>
-                    <div class="s-tag">{meta.tagline}</div>
-                  </div>
-                </div>
-                <div class="str">
-                  <span class="s-price">
-                    {variants.length > 1
-                      ? `${fmt(minPrice)} – ${fmt(maxPrice)}`
-                      : fmt(minPrice)
-                    }
-                    {variants.length > 1 && <span class="s-count"> · {variants.length} sizes</span>}
-                  </span>
-                  <svg class="s-chevron" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-                    <polyline points="6 9 12 15 18 9"/>
-                  </svg>
-                </div>
-              </button>
-
-              <div class="series-body" hidden>
-                <p class="s-intro">{meta.intro}</p>
-                <div class="variants-grid">
-                  {variants.map(v => {
-                    const size = getSize(v.name);
-                    const area = getWorkingArea(v.description);
-                    const mo   = monthlyPayment(v.rate);
-                    return (
-                      <div class="variant-card">
-                        <div class="vc-size">{size}</div>
-                        {area && <div class="vc-area">{area} cutting area</div>}
-                        <div class="vc-price">{fmt(v.rate)}</div>
-                        {v.rate >= 1000 && <div class="vc-monthly">Est. {fmt(mo)}/mo*</div>}
-                        <a href="/#contact" class="btn btn-primary vc-btn">Get a Quote</a>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-            </div>
-          );
-        })}
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════════════ -->
   <!-- CNC ROUTERS                                    -->
   <!-- ══════════════════════════════════════════════ -->
-  <section id="routers" class="machine-section" style="background: var(--light);">
+  <section id="routers" class="machine-section" style="background: var(--white);">
     <div class="container">
-      <p class="section-label">// CNC Routers</p>
+      <p class="section-label">CNC Routers</p>
       <h2 class="section-title">From Entry-Level to Industrial</h2>
       <div class="title-rule"></div>
       <p class="section-sub">Four series covering every budget and production level. Every router ships with a welded steel frame, precision components, and full support.</p>
@@ -208,11 +141,77 @@ const META = {
   </section>
 
   <!-- ══════════════════════════════════════════════ -->
+  <!-- PLASMA TABLES (archived — not actively marketed, still reachable/quotable) -->
+  <!-- ══════════════════════════════════════════════ -->
+  <section id="plasma" class="machine-section" style="background: var(--light);">
+    <div class="container">
+      <p class="section-label">Plasma Tables</p>
+      <h2 class="section-title">Cut Steel, Aluminum & Sheet Metal</h2>
+      <div class="title-rule"></div>
+      <p class="section-sub">Three tiers — from compact garage tables to production shop setups. Click a series to see available sizes and pricing.</p>
+
+      <div class="series-list">
+        {plasmaSeries.map(seriesKey => {
+          const variants = plasmaByS[seriesKey];
+          const meta     = META[seriesKey];
+          const minPrice = Math.min(...variants.map(v => v.rate));
+          const maxPrice = Math.max(...variants.map(v => v.rate));
+          return (
+            <div class="series-accordion">
+              <button class="series-toggle" aria-expanded="false">
+                <div class="stl">
+                  <span class={`s-badge ${meta.cls}`}>{meta.badge}</span>
+                  <div>
+                    <div class="s-name">{seriesKey}</div>
+                    <div class="s-tag">{meta.tagline}</div>
+                  </div>
+                </div>
+                <div class="str">
+                  <span class="s-price">
+                    {variants.length > 1
+                      ? `${fmt(minPrice)} – ${fmt(maxPrice)}`
+                      : fmt(minPrice)
+                    }
+                    {variants.length > 1 && <span class="s-count"> · {variants.length} sizes</span>}
+                  </span>
+                  <svg class="s-chevron" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                    <polyline points="6 9 12 15 18 9"/>
+                  </svg>
+                </div>
+              </button>
+
+              <div class="series-body" hidden>
+                <p class="s-intro">{meta.intro}</p>
+                <div class="variants-grid">
+                  {variants.map(v => {
+                    const size = getSize(v.name);
+                    const area = getWorkingArea(v.description);
+                    const mo   = monthlyPayment(v.rate);
+                    return (
+                      <div class="variant-card">
+                        <div class="vc-size">{size}</div>
+                        {area && <div class="vc-area">{area} cutting area</div>}
+                        <div class="vc-price">{fmt(v.rate)}</div>
+                        {v.rate >= 1000 && <div class="vc-monthly">Est. {fmt(mo)}/mo*</div>}
+                        <a href="/#contact" class="btn btn-primary vc-btn">Get a Quote</a>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════ -->
   <!-- SPECIALTY                                       -->
   <!-- ══════════════════════════════════════════════ -->
   <section id="specialty" class="machine-section" style="background: var(--dark-2);">
     <div class="container">
-      <p class="section-label" style="color: var(--accent);">// Specialty Machines</p>
+      <p class="section-label" style="color: var(--accent);">Specialty Machines</p>
       <h2 class="section-title white">Purpose-Built Operations</h2>
       <div class="title-rule"></div>
       <p class="section-sub" style="color: #aaa;">Not general routing — dedicated industrial machines built for specific, high-volume operations.</p>
@@ -271,7 +270,7 @@ const META = {
   <!-- ══════════════════════════════════════════════ -->
   <section id="custom" style="padding: var(--section-pad); background: var(--dark);">
     <div class="container text-center">
-      <p class="section-label">// Custom</p>
+      <p class="section-label">Custom</p>
       <h2 class="section-title white">Don't See Exactly What You Need?</h2>
       <div class="title-rule"></div>
       <p class="section-sub" style="color: #aaa;">

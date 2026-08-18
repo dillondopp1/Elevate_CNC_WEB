@@ -1,0 +1,31 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SupportChat from '../components/SupportChat.astro';
+---
+
+<Layout title="Support" description="CNC12 control troubleshooting and support for Elevate CNC machines." currentPage="/support">
+
+  <!-- Page Hero -->
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <p class="page-hero-label">// Support</p>
+      <h1 class="page-hero-title">CNC12 Troubleshooting</h1>
+      <p class="page-hero-sub">Ask a question and get an answer straight from the Centroid CNC12 manual.</p>
+    </div>
+  </div>
+
+  <section style="padding: var(--section-pad) 24px; background: var(--dark);">
+    <SupportChat />
+  </section>
+
+  <section style="padding: 48px 24px; background: var(--light);">
+    <div class="container text-center">
+      <p class="section-sub">
+        Something not covered in the manual, or a wiring/electrical issue? Skip the bot —
+        <a href="tel:+12085571587" style="color:var(--accent)">call us at (208) 557-1587</a>
+        or <a href="/#contact" style="color:var(--accent)">send us a message</a>.
+      </p>
+    </div>
+  </section>
+
+</Layout>

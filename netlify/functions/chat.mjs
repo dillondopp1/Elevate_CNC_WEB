@@ -186,12 +186,10 @@ Collect these — but do NOT block CRM entry waiting for all of them. Create con
 - 220V or 110V power available
 
 ## Machine Selection
-- Hobbyist plasma (<$2k): Spark series
-- Plasma mid ($2k-$4k): ION or Prime
-- Small shop ($5k-$9k): Ascent or Ridge
-- Growing shop ($9k-$18k): Ridge 4x8 or Summit 4x4
-- Production shop ($18k-$25k): Summit 4x8 or Summit ATC
-- Large production ($25k+): APEX series
+- Entry / small shop ($7k-$10k): Ascent or Ridge
+- Production shop ($18k-$25k): Summit 4x4/4x8, Summit 6x12, or Summit ATC
+- Large production ($28k+): APEX series
+- Plasma (not actively marketed, but quotable if asked): Spark (<$2k), ION/Prime ($3k-$4.5k)
 
 ## Pipeline Stage IDs
 - Initial Inquiry: 3372444347
