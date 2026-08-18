@@ -1,5 +1,6 @@
 import Anthropic from '@anthropic-ai/sdk';
 import { searchManual } from '../../src/lib/manual_search.js';
+import { verifyToken } from '../../src/lib/support_token.js';
 
 const MODEL = 'claude-haiku-4-5-20251001';
 
@@ -39,7 +40,11 @@ export const handler = async (event) => {
   }
 
   try {
-    const { messages } = JSON.parse(event.body || '{}');
+    const { messages, token } = JSON.parse(event.body || '{}');
+
+    if (!verifyToken(token, process.env.SUPPORT_TOKEN_SECRET)) {
+      return { statusCode: 401, headers, body: JSON.stringify({ error: 'Not authorized' }) };
+    }
 
     if (!Array.isArray(messages) || messages.length === 0) {
       return { statusCode: 400, headers, body: JSON.stringify({ error: 'messages array required' }) };
