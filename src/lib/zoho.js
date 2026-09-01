@@ -52,7 +52,7 @@ export async function fetchZohoItems() {
       { headers: { Authorization: `Zoho-oauthtoken ${tokenData.access_token}` } }
     );
     const data = await itemsRes.json();
-    const items = data.items || [];
+    const items = applyOwnerOverrides(data.items || []);
 
     _itemCache = items;
     _cacheAt   = Date.now();
@@ -65,7 +65,59 @@ export async function fetchZohoItems() {
 
 /** Bundled snapshot so builds never fail when Zoho is unreachable */
 function getFallbackItems() {
-  return _fallbackData.items || [];
+  return applyOwnerOverrides(_fallbackData.items || []);
+}
+
+/**
+ * Owner-confirmed spec corrections applied to Zoho description text.
+ *
+ * Zoho is the source of truth for pricing and most specs, but the owner has
+ * confirmed three places where the Zoho entries are simply wrong. Detail pages
+ * render these descriptions verbatim, so without this layer the site publishes
+ * specs the owner has told us are false — most seriously, that the Ascent runs
+ * on a household 110V outlet. A buyer acting on that would provision the wrong
+ * electrical service before delivery.
+ *
+ * This runs on every item fetch (live and cached fallback), so the pages stay
+ * correct even if the Zoho entries drift again. Once the Zoho descriptions are
+ * fixed at the source these substitutions simply stop matching, and this
+ * function can be deleted.
+ *
+ * Every pattern is anchored on "110V", "household", "electrical service", or
+ * "Single Phase" so that unrelated text — notably the Ascent 4x8's
+ * "Length: 110 in" — can never match.
+ */
+const OWNER_OVERRIDES = [
+  // Ascent is 220V single-phase, NOT 110V household power.
+  { match: /ascent/i, subs: [
+    ['capable CNC system that operates entirely on standard household power while maintaining accuracy and rigidity',
+     'capable CNC system that balances accuracy and rigidity'],
+    ['while remaining accessible for users who do not require industrial electrical service',
+     'while remaining accessible to smaller shops'],
+    ['Router-based spindle system allows full machine operation on 110V power',
+     'Router-based spindle system keeps the overall power requirement modest'],
+    ['Designed for operation on standard 110V power',
+     'Designed for operation on 220V single-phase power'],
+    ['110V single-phase', '220V single-phase'],
+    ['Standard household outlet', 'Dedicated 220V circuit required'],
+  ] },
+  // Apex is 220V THREE-phase, not single-phase.
+  { match: /apex/i, subs: [
+    ['220V Single Phase', '220V Three Phase'],
+    ['220V single-phase', '220V three-phase'],
+  ] },
+];
+
+function applyOwnerOverrides(items) {
+  return items.map(item => {
+    if (typeof item.description !== 'string') return item;
+    const rule = OWNER_OVERRIDES.find(r => r.match.test(item.name || ''));
+    if (!rule) return item;
+
+    let description = item.description;
+    for (const [from, to] of rule.subs) description = description.split(from).join(to);
+    return description === item.description ? item : { ...item, description };
+  });
 }
 
 const MACHINE_KEYWORDS_UC = ['SPARK','ION','PRIME','ASCENT','RIDGE','SUMMIT','APEX','BORELINE'];
