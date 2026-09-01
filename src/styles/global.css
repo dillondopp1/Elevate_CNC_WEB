@@ -1756,3 +1756,30 @@ a { color: inherit; text-decoration: none; }
 @media (max-width: 700px) {
   .trust-band-inner { grid-template-columns: repeat(2, 1fr); gap: 14px; }
 }
+
+/* ==========================================
+   MACHINE CARD
+   ========================================== */
+.machine-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 24px; margin-top: 32px; }
+.machine-card { position: relative; display: flex; flex-direction: column; background: var(--white); border: 1px solid var(--border); transition: border-color 0.2s, transform 0.2s; }
+.machine-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.machine-card--featured { border-color: var(--accent); box-shadow: 0 8px 30px rgba(26,110,216,0.12); }
+.machine-card-flag {
+  position: absolute; top: 0; right: 0; z-index: 2; background: var(--accent); color: #fff;
+  font-family: var(--font-head); font-size: 0.68rem; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase; padding: 5px 12px;
+}
+.machine-card-body { display: flex; flex-direction: column; flex: 1; padding: 22px; gap: 4px; }
+.machine-card-name { font-family: var(--font-head); font-size: 1.4rem; font-weight: 800; text-transform: uppercase; color: var(--dark); margin-top: 10px; }
+.machine-card-tag { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 14px; }
+.machine-card-specs { display: flex; flex-direction: column; gap: 7px; padding: 14px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin-bottom: 14px; }
+.machine-card-spec { display: grid; grid-template-columns: 78px 1fr; gap: 10px; align-items: baseline; }
+.machine-card-spec dt { font-family: var(--font-head); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); }
+.machine-card-spec dd { font-size: 0.86rem; color: var(--text); }
+.machine-card-price { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.machine-card-price-value { font-family: var(--font-head); font-size: 1.5rem; font-weight: 800; color: var(--dark); }
+.machine-card-price-mo { font-size: 0.8rem; color: var(--text-muted); }
+.machine-card-sizes { font-size: 0.8rem; color: var(--text-muted); margin-top: 2px; }
+.machine-card-actions { display: flex; gap: 10px; margin-top: auto; padding-top: 18px; }
+.machine-card-btn { flex: 1; justify-content: center; padding: 11px 14px; font-size: 0.8rem; }
+@media (max-width: 520px) { .machine-card-actions { flex-direction: column; } }
