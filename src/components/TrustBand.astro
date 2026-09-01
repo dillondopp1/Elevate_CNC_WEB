@@ -1,0 +1,18 @@
+---
+const items = [
+  { label: 'Published Pricing',   detail: 'Real prices, not "call for quote"' },
+  { label: '1-Year Warranty',     detail: 'Included on every machine' },
+  { label: 'Setup & Training',    detail: 'We get you cutting' },
+  { label: 'Financing Available', detail: 'For qualified buyers' },
+];
+---
+<div class="trust-band">
+  <div class="container trust-band-inner">
+    {items.map(i => (
+      <div class="trust-item">
+        <span class="trust-item-label">{i.label}</span>
+        <span class="trust-item-detail">{i.detail}</span>
+      </div>
+    ))}
+  </div>
+</div>
