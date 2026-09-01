@@ -1723,3 +1723,18 @@ a { color: inherit; text-decoration: none; }
   .series-body { padding: 18px; }
   .cat-nav-item { padding: 14px 18px; font-size: 0.78rem; }
 }
+
+/* ==========================================
+   PHOTO SLOT
+   ========================================== */
+.photo-slot { width: 100%; aspect-ratio: 16 / 10; overflow: hidden; background: var(--dark-2); }
+.photo-slot img { width: 100%; height: 100%; object-fit: cover; }
+.photo-slot--empty {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
+  background: linear-gradient(135deg, var(--dark-2) 0%, var(--dark-3) 100%);
+  color: var(--grey-light);
+}
+.photo-slot-label {
+  font-family: var(--font-head); font-size: 0.72rem; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.65;
+}
