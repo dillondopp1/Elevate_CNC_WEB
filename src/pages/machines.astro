@@ -10,6 +10,8 @@ import {
   getSize,
 } from '../lib/zoho.js';
 import { META, slugForSeries, laserSlugForSeries } from '../lib/machine_meta.js';
+import MachineCard from '../components/MachineCard.astro';
+import TrustBand from '../components/TrustBand.astro';
 
 const items = await fetchZohoItems();
 const { plasma, routers, specialty } = categorizeMachines(items);
@@ -38,7 +40,7 @@ const specByS   = groupBySeries(specialty);
 const laserByS  = groupBySeries(lasers);
 
 const plasmaSeries = ['Spark Series','ION Series','Prime Series'].filter(s => plasmaByS[s]);
-const routerSeries = ['Ascent Series','Ridge Series','Summit Series','Summit ATC','Apex Series'].filter(s => routerByS[s]);
+const routerSeries = ['Ridge Series','Ascent Series','Summit Series','Summit ATC','Apex Series'].filter(s => routerByS[s]);
 const specSeries   = ['Summit Lathe','BoreLine'].filter(s => specByS[s]);
 const laserSeries  = ['CO2 Laser Series','Fiber Laser Series'].filter(s => laserByS[s]);
 ---
@@ -66,6 +68,8 @@ const laserSeries  = ['CO2 Laser Series','Fiber Laser Series'].filter(s => laser
     </div>
   </nav>
 
+  <TrustBand />
+
   <!-- ══════════════════════════════════════════════ -->
   <!-- CNC ROUTERS                                    -->
   <!-- ══════════════════════════════════════════════ -->
@@ -76,61 +80,16 @@ const laserSeries  = ['CO2 Laser Series','Fiber Laser Series'].filter(s => laser
       <div class="title-rule"></div>
       <p class="section-sub">Four series covering every budget and production level. Every router ships with a welded steel frame, precision components, and full support.</p>
 
-      <div class="series-list">
-        {routerSeries.map(seriesKey => {
-          const variants = routerByS[seriesKey];
-          const meta     = META[seriesKey];
-          const minPrice = Math.min(...variants.map(v => v.rate));
-          const maxPrice = Math.max(...variants.map(v => v.rate));
-          return (
-            <div class="series-accordion">
-              <button class="series-toggle" aria-expanded="false">
-                <div class="stl">
-                  <span class={`s-badge ${meta.cls}`}>{meta.badge}</span>
-                  <div>
-                    <div class="s-name">{seriesKey}</div>
-                    <div class="s-tag">{meta.tagline}</div>
-                  </div>
-                </div>
-                <div class="str">
-                  <span class="s-price">
-                    {variants.length > 1
-                      ? `${fmt(minPrice)} – ${fmt(maxPrice)}`
-                      : fmt(minPrice)
-                    }
-                    {variants.length > 1 && <span class="s-count"> · {variants.length} configs</span>}
-                  </span>
-                  <svg class="s-chevron" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-                    <polyline points="6 9 12 15 18 9"/>
-                  </svg>
-                </div>
-              </button>
-
-              <div class="series-body" hidden>
-                <p class="s-intro">{meta.intro}</p>
-                <div class="variants-grid">
-                  {variants.map(v => {
-                    const size = getSize(v.name);
-                    const area = getWorkingArea(v.description);
-                    const mo   = monthlyPayment(v.rate);
-                    return (
-                      <div class="variant-card">
-                        <div class="vc-size">{size}</div>
-                        {area && <div class="vc-area">{area} working area</div>}
-                        <div class="vc-price">{fmt(v.rate)}</div>
-                        <div class="vc-monthly">Est. {fmt(mo)}/mo*</div>
-                        <a href="/#contact" class="btn btn-primary vc-btn">Get a Quote</a>
-                      </div>
-                    );
-                  })}
-                </div>
-                {slugForSeries(seriesKey) && (
-                  <a href={`/machines/${slugForSeries(seriesKey)}`} class="s-full-details">Full {seriesKey} Specs &amp; Details →</a>
-                )}
-              </div>
-            </div>
-          );
-        })}
+      <div class="machine-grid">
+        {routerSeries.map(seriesKey => (
+          <MachineCard
+            seriesName={seriesKey}
+            meta={META[seriesKey]}
+            variants={routerByS[seriesKey]}
+            detailHref={slugForSeries(seriesKey) ? `/machines/${slugForSeries(seriesKey)}` : null}
+            featured={seriesKey === 'Summit Series'}
+          />
+        ))}
       </div>
     </div>
   </section>
@@ -147,61 +106,15 @@ const laserSeries  = ['CO2 Laser Series','Fiber Laser Series'].filter(s => laser
         Non-metal cutting/engraving and metal marking/cutting. Pricing below is a placeholder pending final inventory — confirm current pricing when you request a quote.
       </p>
 
-      <div class="series-list">
-        {laserSeries.map(seriesKey => {
-          const variants = laserByS[seriesKey];
-          const meta     = META[seriesKey];
-          const minPrice = Math.min(...variants.map(v => v.rate));
-          const maxPrice = Math.max(...variants.map(v => v.rate));
-          return (
-            <div class="series-accordion">
-              <button class="series-toggle" aria-expanded="false">
-                <div class="stl">
-                  <span class={`s-badge ${meta.cls}`}>{meta.badge}</span>
-                  <div>
-                    <div class="s-name">{seriesKey}</div>
-                    <div class="s-tag">{meta.tagline}</div>
-                  </div>
-                </div>
-                <div class="str">
-                  <span class="s-price">
-                    {variants.length > 1
-                      ? `${fmt(minPrice)} – ${fmt(maxPrice)}`
-                      : fmt(minPrice)
-                    }
-                    {variants.length > 1 && <span class="s-count"> · {variants.length} configs</span>}
-                  </span>
-                  <svg class="s-chevron" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-                    <polyline points="6 9 12 15 18 9"/>
-                  </svg>
-                </div>
-              </button>
-
-              <div class="series-body" hidden>
-                <p class="s-intro">{meta.intro}</p>
-                <div class="variants-grid">
-                  {variants.map(v => {
-                    const size = getSize(v.name);
-                    const area = getWorkingArea(v.description);
-                    const mo   = monthlyPayment(v.rate);
-                    return (
-                      <div class="variant-card">
-                        <div class="vc-size">{size}</div>
-                        {area && <div class="vc-area">{area}</div>}
-                        <div class="vc-price">{fmt(v.rate)}</div>
-                        <div class="vc-monthly">Est. {fmt(mo)}/mo*</div>
-                        <a href="/#contact" class="btn btn-primary vc-btn">Get a Quote</a>
-                      </div>
-                    );
-                  })}
-                </div>
-                {laserSlugForSeries(seriesKey) && (
-                  <a href={`/machines/laser/${laserSlugForSeries(seriesKey)}`} class="s-full-details">Full {seriesKey} Specs &amp; Details →</a>
-                )}
-              </div>
-            </div>
-          );
-        })}
+      <div class="machine-grid">
+        {laserSeries.map(seriesKey => (
+          <MachineCard
+            seriesName={seriesKey}
+            meta={META[seriesKey]}
+            variants={laserByS[seriesKey]}
+            detailHref={laserSlugForSeries(seriesKey) ? `/machines/laser/${laserSlugForSeries(seriesKey)}` : null}
+          />
+        ))}
       </div>
     </div>
   </section>
@@ -216,58 +129,15 @@ const laserSeries  = ['CO2 Laser Series','Fiber Laser Series'].filter(s => laser
       <div class="title-rule"></div>
       <p class="section-sub">Three tiers — from compact garage tables to production shop setups. Click a series to see available sizes and pricing.</p>
 
-      <div class="series-list">
-        {plasmaSeries.map(seriesKey => {
-          const variants = plasmaByS[seriesKey];
-          const meta     = META[seriesKey];
-          const minPrice = Math.min(...variants.map(v => v.rate));
-          const maxPrice = Math.max(...variants.map(v => v.rate));
-          return (
-            <div class="series-accordion">
-              <button class="series-toggle" aria-expanded="false">
-                <div class="stl">
-                  <span class={`s-badge ${meta.cls}`}>{meta.badge}</span>
-                  <div>
-                    <div class="s-name">{seriesKey}</div>
-                    <div class="s-tag">{meta.tagline}</div>
-                  </div>
-                </div>
-                <div class="str">
-                  <span class="s-price">
-                    {variants.length > 1
-                      ? `${fmt(minPrice)} – ${fmt(maxPrice)}`
-                      : fmt(minPrice)
-                    }
-                    {variants.length > 1 && <span class="s-count"> · {variants.length} sizes</span>}
-                  </span>
-                  <svg class="s-chevron" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-                    <polyline points="6 9 12 15 18 9"/>
-                  </svg>
-                </div>
-              </button>
-
-              <div class="series-body" hidden>
-                <p class="s-intro">{meta.intro}</p>
-                <div class="variants-grid">
-                  {variants.map(v => {
-                    const size = getSize(v.name);
-                    const area = getWorkingArea(v.description);
-                    const mo   = monthlyPayment(v.rate);
-                    return (
-                      <div class="variant-card">
-                        <div class="vc-size">{size}</div>
-                        {area && <div class="vc-area">{area} cutting area</div>}
-                        <div class="vc-price">{fmt(v.rate)}</div>
-                        {v.rate >= 1000 && <div class="vc-monthly">Est. {fmt(mo)}/mo*</div>}
-                        <a href="/#contact" class="btn btn-primary vc-btn">Get a Quote</a>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-            </div>
-          );
-        })}
+      <div class="machine-grid">
+        {plasmaSeries.map(seriesKey => (
+          <MachineCard
+            seriesName={seriesKey}
+            meta={META[seriesKey]}
+            variants={plasmaByS[seriesKey]}
+            detailHref={null}
+          />
+        ))}
       </div>
     </div>
   </section>
@@ -282,51 +152,15 @@ const laserSeries  = ['CO2 Laser Series','Fiber Laser Series'].filter(s => laser
       <div class="title-rule"></div>
       <p class="section-sub" style="color: #aaa;">Not general routing — dedicated industrial machines built for specific, high-volume operations.</p>
 
-      <div class="series-list series-list-dark">
-        {specSeries.map(seriesKey => {
-          const variants = specByS[seriesKey];
-          const meta     = META[seriesKey];
-          const minPrice = Math.min(...variants.map(v => v.rate));
-          return (
-            <div class="series-accordion series-accordion-dark">
-              <button class="series-toggle" aria-expanded="false">
-                <div class="stl">
-                  <span class={`s-badge ${meta.cls}`}>{meta.badge}</span>
-                  <div>
-                    <div class="s-name">{seriesKey}</div>
-                    <div class="s-tag">{meta.tagline}</div>
-                  </div>
-                </div>
-                <div class="str">
-                  <span class="s-price">{fmt(minPrice)}</span>
-                  <svg class="s-chevron" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-                    <polyline points="6 9 12 15 18 9"/>
-                  </svg>
-                </div>
-              </button>
-
-              <div class="series-body" hidden>
-                <p class="s-intro">{meta.intro}</p>
-                <div class="variants-grid">
-                  {variants.map(v => {
-                    const size = getSize(v.name);
-                    const area = getWorkingArea(v.description);
-                    const mo   = monthlyPayment(v.rate);
-                    return (
-                      <div class="variant-card">
-                        <div class="vc-size">{size}</div>
-                        {area && <div class="vc-area">{area}</div>}
-                        <div class="vc-price">{fmt(v.rate)}</div>
-                        <div class="vc-monthly">Est. {fmt(mo)}/mo*</div>
-                        <a href="/#contact" class="btn btn-primary vc-btn">Get a Quote</a>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-            </div>
-          );
-        })}
+      <div class="machine-grid">
+        {specSeries.map(seriesKey => (
+          <MachineCard
+            seriesName={seriesKey}
+            meta={META[seriesKey]}
+            variants={specByS[seriesKey]}
+            detailHref={null}
+          />
+        ))}
       </div>
     </div>
   </section>
@@ -354,28 +188,5 @@ const laserSeries  = ['CO2 Laser Series','Fiber Laser Series'].filter(s => laser
     </p>
   </div>
 
-  <script>
-    // Accordion — one open per section
-    document.querySelectorAll('.series-toggle').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const body   = btn.nextElementSibling;
-        const isOpen = btn.getAttribute('aria-expanded') === 'true';
-        const list   = btn.closest('.series-list');
-
-        // Close all in same list
-        list.querySelectorAll('.series-toggle').forEach(b => {
-          b.setAttribute('aria-expanded', 'false');
-          b.nextElementSibling.hidden = true;
-        });
-
-        // Open this one if it was closed
-        if (!isOpen) {
-          btn.setAttribute('aria-expanded', 'true');
-          body.hidden = false;
-          setTimeout(() => body.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 50);
-        }
-      });
-    });
-  </script>
 
 </Layout>
