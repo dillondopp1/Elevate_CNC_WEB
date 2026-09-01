@@ -7,15 +7,15 @@
  * Pricing/monthly/sizes come straight from live Zoho data via the same
  * helpers the cards use — never hardcoded, never "corrected".
  *
- * Spec rows come from META[...].keySpecs (src/lib/machine_meta.js) —
- * series-level constants, not parsed from Zoho description text. Series
- * legitimately carry different spec labels (e.g. Ridge has Drive, Summit ATC
- * has Spindle); the row set is the union of labels across the series being
- * compared, in the order they first appear. Any series missing a given
- * label renders an em-dash for that cell rather than guessing.
+ * Spec rows come from META[...].compare (src/lib/machine_meta.js) — a fixed,
+ * normalized row set (COMPARE_ROWS) that every router series answers,
+ * including with null where a spec is genuinely not stated (rendered as an
+ * em-dash). This is intentionally separate from META[...].keySpecs, which is
+ * a per-series highlight reel for the cards and cannot be normalized into
+ * comparison rows without losing information.
  */
 import { monthlyPayment, getSize } from '../lib/zoho.js';
-import { META } from '../lib/machine_meta.js';
+import { META, COMPARE_ROWS } from '../lib/machine_meta.js';
 
 export interface Props {
   series: string[];
@@ -25,20 +25,9 @@ const { series, bySeries } = Astro.props;
 
 const fmt = (n: number) => '$' + Number(n).toLocaleString('en-US');
 
-// Union of keySpecs labels across the compared series, preserving the
-// order the series appear in (cheapest to most expensive) and the order
-// labels first appear within each series' keySpecs array.
-const specLabels: string[] = [];
-series.forEach(s => {
-  (META[s]?.keySpecs || []).forEach(({ label }) => {
-    if (!specLabels.includes(label)) specLabels.push(label);
-  });
-});
-
-function specValue(s: string, label: string) {
-  const specs = META[s]?.keySpecs || [];
-  const found = specs.find((sp: { label: string; value: string }) => sp.label === label);
-  return found ? found.value : '—';
+function compareValue(s: string, row: string) {
+  const value = META[s]?.compare?.[row];
+  return value ? value : '—';
 }
 ---
 <div class="comp-table-wrap">
@@ -62,10 +51,10 @@ function specValue(s: string, label: string) {
         <td>Sizes</td>
         {series.map(s => <td>{bySeries[s].map((v: any) => getSize(v.name)).join(', ')}</td>)}
       </tr>
-      {specLabels.map(label => (
+      {COMPARE_ROWS.map(row => (
         <tr>
-          <td>{label}</td>
-          {series.map(s => <td>{specValue(s, label)}</td>)}
+          <td>{row}</td>
+          {series.map(s => <td>{compareValue(s, row)}</td>)}
         </tr>
       ))}
     </tbody>
