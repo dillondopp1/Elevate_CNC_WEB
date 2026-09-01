@@ -53,6 +53,22 @@ Therefore:
 - **Size-varying specs** (spindle HP, working area, price) appear in the comparison table and the per-configuration cards, where they can be stated per size.
 - Where a series genuinely does not state a spec in Zoho, **omit the row** rather than guess.
 
+### Tier taxonomy correction
+
+After the Zoho price update, Ascent ($8,400–$9,900) is priced entirely above Ridge ($7,200–$8,800), so the existing badges contradict the pricing. On the accordion this was easy to miss; on a card grid with prominent badges it is immediately visible.
+
+Decision: **swap the badges** so tier matches price order.
+
+| Series | Old badge | New badge |
+|---|---|---|
+| Ridge Series | MID-RANGE (`badge-mid`) | **ENTRY** (`badge-entry`) |
+| Ascent Series | ENTRY (`badge-entry`) | **MID-RANGE** (`badge-mid`) |
+
+Consequences:
+
+- **Display order changes** to Ridge → Ascent → Summit → Summit ATC → Apex, so cards read cheapest-to-most-expensive and badges run entry → mid → production → industrial. The `routerSeries` array order and `ROUTER_SLUGS` ordering (which drives prev/next nav on detail pages) both update to match.
+- **Homepage reconciliation required.** The homepage package card labels Ascent as "Starter." With Ascent now badged MID-RANGE on `/machines`, that is a visible contradiction between two pages. The homepage Ascent card label must be reconciled during implementation.
+
 ### Detail pages (`/machines/[slug]`, `/machines/laser/[slug]`)
 
 Reordered so the top fold answers the buyer's actual first questions:
@@ -110,7 +126,12 @@ To correct on the site:
 
 1. **`Elevate CNC SUMMIT 6x12` description is titled "(4×8)"** — copy-paste error. Working area inside is correct (72 × 144 in). Not currently rendered on the site, but wrong in the source of truth.
 2. **Apex description omits the automatic tool changer** (see above).
-3. Live Zoho contains a **Summit 5×10 ($26,800)** variant absent from the local `machine_catalog.json` snapshot, so Dwight's chat does not know it exists.
+
+### Zoho pricing update — confirmed applied
+
+The owner has applied the agreed pricing in Zoho. Live values now read: Ascent $8,400–$9,900 (2 configs, 5×10 discontinued), Ridge $7,200–$8,800, Summit $18,400–$24,200 (3 configs), Summit ATC $24,400, Apex $28,400.
+
+The local `machine_catalog.json` snapshot that powers Dwight's chat is now **stale relative to live Zoho** and must be re-synced so Dwight quotes current prices and no longer offers the discontinued Ascent 5×10.
 
 ## Out of scope (YAGNI)
 
