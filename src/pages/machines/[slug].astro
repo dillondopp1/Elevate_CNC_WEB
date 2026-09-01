@@ -10,6 +10,8 @@ import {
   parseSpecSections,
 } from '../../lib/zoho.js';
 import { META, ROUTER_SLUGS } from '../../lib/machine_meta.js';
+import PhotoSlot from '../../components/PhotoSlot.astro';
+import TrustBand from '../../components/TrustBand.astro';
 
 export async function getStaticPaths() {
   const items = await fetchZohoItems();
@@ -78,7 +80,19 @@ const nextSlug = idx < slugOrder.length - 1 ? slugOrder[idx + 1] : null;
       <div class="model-overview">
         <div>
           <span class={`s-badge ${meta.cls}`}>{meta.badge}</span>
+          <PhotoSlot src={meta.image} alt={seriesName} label={seriesName} />
+          <dl class="spec-strip">
+            {meta.keySpecs?.map((s: any) => (
+              <div class="spec-strip-item">
+                <dt>{s.label}</dt>
+                <dd>{s.value}</dd>
+              </div>
+            ))}
+          </dl>
           <p class="model-intro">{meta.intro}</p>
+          {meta.bestFor && (
+            <p class="model-bestfor"><strong>Best suited for:</strong> {meta.bestFor}</p>
+          )}
         </div>
         <div class="model-price-box">
           <span class="spec-label">Starting At</span>
@@ -121,6 +135,8 @@ const nextSlug = idx < slugOrder.length - 1 ? slugOrder[idx + 1] : null;
     </div>
   </section>
 
+  <TrustBand />
+
   <!-- Full Specifications -->
   {specs.sections.length > 0 && (
     <section style="padding: 0 24px 64px; background: var(--light);">
@@ -146,7 +162,7 @@ const nextSlug = idx < slugOrder.length - 1 ? slugOrder[idx + 1] : null;
   <!-- Custom CTA -->
   <section style="padding: var(--section-pad); background: var(--dark);">
     <div class="container text-center">
-      <p class="section-label">// Custom</p>
+      <p class="section-label">Custom</p>
       <h2 class="section-title white">Need {article} {seriesName} Built to Different Specs?</h2>
       <div class="title-rule"></div>
       <p class="section-sub" style="color: #aaa;">
@@ -203,6 +219,12 @@ const nextSlug = idx < slugOrder.length - 1 ? slugOrder[idx + 1] : null;
     color: var(--text-muted);
     margin-top: 4px;
   }
+  .spec-strip { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px; margin-top: 20px; padding: 18px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .spec-strip-item { display: flex; flex-direction: column; gap: 3px; }
+  .spec-strip-item dt { font-family: var(--font-head); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); }
+  .spec-strip-item dd { font-size: 0.92rem; font-weight: 600; color: var(--dark); }
+  .model-bestfor { margin-top: 18px; font-size: 0.95rem; color: var(--text); }
+  .model-bestfor strong { font-family: var(--font-head); text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.85rem; }
   .spec-sections {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));

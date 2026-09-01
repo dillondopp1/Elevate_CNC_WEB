@@ -1,0 +1,62 @@
+---
+/**
+ * Side-by-side router comparison table, rendered below the router card grid
+ * on /machines. Reuses the .comp-table styling already established on the
+ * homepage (src/pages/index.astro) for visual consistency.
+ *
+ * Pricing/monthly/sizes come straight from live Zoho data via the same
+ * helpers the cards use — never hardcoded, never "corrected".
+ *
+ * Spec rows come from META[...].compare (src/lib/machine_meta.js) — a fixed,
+ * normalized row set (COMPARE_ROWS) that every router series answers,
+ * including with null where a spec is genuinely not stated (rendered as an
+ * em-dash). This is intentionally separate from META[...].keySpecs, which is
+ * a per-series highlight reel for the cards and cannot be normalized into
+ * comparison rows without losing information.
+ */
+import { monthlyPayment, getSize } from '../lib/zoho.js';
+import { META, COMPARE_ROWS } from '../lib/machine_meta.js';
+
+export interface Props {
+  series: string[];
+  bySeries: Record<string, any[]>;
+}
+const { series, bySeries } = Astro.props;
+
+const fmt = (n: number) => '$' + Number(n).toLocaleString('en-US');
+
+function compareValue(s: string, row: string) {
+  const value = META[s]?.compare?.[row];
+  return value ? value : '—';
+}
+---
+<div class="comp-table-wrap" tabindex="0" role="region" aria-label="Router comparison">
+  <table class="comp-table">
+    <thead>
+      <tr>
+        <th scope="col">Feature</th>
+        {series.map(s => <th scope="col">{s.replace(' Series', '')}</th>)}
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row" class="comp-row-label">Starting Price</th>
+        {series.map(s => <td>{fmt(Math.min(...bySeries[s].map((v: any) => v.rate)))}</td>)}
+      </tr>
+      <tr>
+        <th scope="row" class="comp-row-label">Est. Monthly</th>
+        {series.map(s => <td>{fmt(monthlyPayment(Math.min(...bySeries[s].map((v: any) => v.rate))))}/mo</td>)}
+      </tr>
+      <tr>
+        <th scope="row" class="comp-row-label">Sizes</th>
+        {series.map(s => <td>{bySeries[s].map((v: any) => getSize(v.name)).join(', ')}</td>)}
+      </tr>
+      {COMPARE_ROWS.map(row => (
+        <tr>
+          <th scope="row" class="comp-row-label">{row}</th>
+          {series.map(s => <td>{compareValue(s, row)}</td>)}
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>

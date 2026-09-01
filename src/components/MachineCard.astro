@@ -1,0 +1,52 @@
+---
+import PhotoSlot from './PhotoSlot.astro';
+import { monthlyPayment, getSize } from '../lib/zoho.js';
+
+export interface Props {
+  seriesName: string;
+  meta: any;
+  variants: any[];
+  detailHref?: string | null;
+  featured?: boolean;
+}
+const { seriesName, meta, variants, detailHref = null, featured = false } = Astro.props;
+
+const fmt = (n: number) => '$' + Number(n).toLocaleString('en-US');
+const prices = variants.map(v => v.rate);
+const minPrice = Math.min(...prices);
+const maxPrice = Math.max(...prices);
+const sizes = variants.map(v => getSize(v.name));
+---
+<article class={`machine-card${featured ? ' machine-card--featured' : ''}`}>
+  {featured && <div class="machine-card-flag">Most Popular</div>}
+  <PhotoSlot src={meta.image} alt={seriesName} label={seriesName} />
+  <div class="machine-card-body">
+    <span class={`s-badge ${meta.cls}`}>{meta.badge}</span>
+    <h3 class="machine-card-name">{seriesName}</h3>
+    <p class="machine-card-tag">{meta.tagline}</p>
+
+    {meta.keySpecs?.length > 0 && (
+      <dl class="machine-card-specs">
+        {meta.keySpecs.map((s: any) => (
+          <div class="machine-card-spec">
+            <dt>{s.label}</dt>
+            <dd>{s.value}</dd>
+          </div>
+        ))}
+      </dl>
+    )}
+
+    <div class="machine-card-price">
+      <span class="machine-card-price-value">
+        {prices.length > 1 ? `${fmt(minPrice)} – ${fmt(maxPrice)}` : fmt(minPrice)}
+      </span>
+      <span class="machine-card-price-mo">Est. {fmt(monthlyPayment(minPrice))}/mo</span>
+    </div>
+    <p class="machine-card-sizes">{sizes.length} size{sizes.length > 1 ? 's' : ''}: {sizes.join(' · ')}</p>
+
+    <div class="machine-card-actions">
+      {detailHref && <a href={detailHref} class="btn btn-dark machine-card-btn">View Full Specs</a>}
+      <a href="/#contact" class="btn btn-primary machine-card-btn">Get a Quote</a>
+    </div>
+  </div>
+</article>

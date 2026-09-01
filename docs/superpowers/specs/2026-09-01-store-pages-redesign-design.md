@@ -11,7 +11,7 @@ Make the store pages easier to navigate and raise buyer confidence for $5,500–
 
 - **No machine photos available.** Design must be photo-ready but must not depend on imagery to carry confidence. Placeholders must look deliberate, not broken.
 - **Standard-first, custom as strong exit.** Lead with the browsable standard lineup; thread a well-designed custom-build path throughout rather than burying it.
-- **Zoho is the authoritative spec source** (one confirmed exception: Apex ATC — see Data Corrections).
+- **Zoho is the authoritative spec source, except for the owner override list below.** Where an override exists, the override wins and the Zoho entry is the thing that needs fixing.
 - Conversion model is lead-gen (quote request), not e-commerce checkout. No cart.
 
 ## Problems with the current pages
@@ -101,6 +101,37 @@ The accordion markup and its `.series-toggle` toggle script are removed entirely
 
 `PhotoSlot` takes an optional `src`. When absent, it renders a branded placeholder (dark gradient, logo mark, series name) that reads as intentional. When a real photo path is set in `META`, it swaps in automatically with no code change.
 
+## Owner Override List (authoritative — overrides Zoho)
+
+Confirmed by the owner on 2026-09-01. Where these conflict with Zoho, **these win** and the Zoho entry is what needs correcting.
+
+| # | Machine | Override | What Zoho currently says |
+|---|---|---|---|
+| 1 | Apex | Has an automatic tool changer | Omits it entirely |
+| 2 | Apex | **220V three-phase** | "220V Single Phase" |
+| 3 | Ascent | **220V single-phase** | "110V single-phase" (stated in 3 places) |
+
+Resulting router electrical requirements: **Ridge, Ascent, Summit, Summit ATC = 220V single-phase. Apex = 220V three-phase.**
+
+### Consequence — the Ascent 110V claim is false and must be removed sitewide
+
+The Ascent's entire published positioning is built on running from a household outlet. That claim is wrong and appears in at least these places, all of which must be corrected:
+
+- Homepage Ascent package card feature bullet: "Standard household power (110V)"
+- Homepage comparison table, Ascent `Power Requirement` cell: "110V"
+- `META['Ascent Series'].intro` in `src/lib/machine_meta.js`: "Runs on standard 110V household power — no industrial electrical service required"
+- `META['Ascent Series'].keySpecs` Power value
+- Any "no electrician required" / "household power" phrasing on the FAQ and About pages
+
+**This is the highest-priority correction in the redesign.** A buyer acting on the current copy would provision the wrong electrical service before delivery.
+
+### Consequence — two Zoho entries keep republishing wrong specs
+
+Detail pages render the Zoho description live, so correcting site copy is not sufficient. Until the owner fixes these Zoho entries, the pages will keep displaying the wrong values:
+
+- **Ascent** — description states 110V in three places; the detail page will show 110V regardless of site copy.
+- **Apex** — description omits the tool changer and states single-phase; the detail page will contradict the card above it on both counts.
+
 ## Data Corrections (separate from the redesign)
 
 Spec verification found site copy that contradicts the Zoho catalog. User has confirmed **Zoho is authoritative**, with one exception.
@@ -116,9 +147,12 @@ To correct on the site:
 | Homepage Apex card | Pneumatic Alignment Pins | Remove — not stated in Zoho |
 | Homepage Apex card | Integrated Dust Collection | Remove — not stated in Zoho |
 | Homepage Apex card + comparison table | 6-Zone Vacuum Table | Vacuum system (zone count not stated) |
-| Homepage comparison table | Apex: 220V 3-Phase | **220V Single Phase** |
 | Homepage comparison table | Ascent: 2HP | 2.5 HP Skil router |
 | Homepage comparison table | Summit: 4HP | 3 HP (4×4 / 4×8) |
+| Homepage comparison table | Ascent: 110V | **220V single-phase** (override #3) |
+| Homepage Ascent card | "Standard household power (110V)" | **Remove** — false (override #3) |
+
+**Reversed from an earlier draft of this spec:** the Apex `220V 3-Phase` row was previously listed for correction to single-phase on Zoho's authority. Override #2 supersedes that — **the existing 3-phase copy is correct and stays.**
 
 **Confirmed exception — Apex ATC.** User confirms the Apex does ship with an automatic tool changer; Zoho's Apex description omits it. The site copy stays. **Consequence to flag:** the Apex detail page renders its spec sheet live from Zoho, so until the Zoho description is updated, the page will advertise ATC on the card above a spec sheet that never mentions one. Zoho's Apex entry should be updated to include the tool changer.
 

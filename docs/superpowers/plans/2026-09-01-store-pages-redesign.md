@@ -10,7 +10,11 @@
 
 ## Global Constraints
 
-- **Zoho is the authoritative spec source.** The single confirmed exception is the Apex automatic tool changer, which the owner confirms exists despite Zoho omitting it.
+- **Zoho is the authoritative spec source, EXCEPT for these three owner-confirmed overrides.** Where an override applies it wins, and the Zoho entry is what needs fixing:
+  1. **Apex has an automatic tool changer** (Zoho omits it).
+  2. **Apex is 220V three-phase** (Zoho says single-phase).
+  3. **Ascent is 220V single-phase** (Zoho says 110V in three places).
+- **The Ascent 110V / "household power" / "no electrician required" claim is FALSE and must be removed everywhere it appears.** Resulting router power specs: Ridge, Ascent, Summit, Summit ATC = 220V single-phase; Apex = 220V three-phase.
 - **Never invent a spec.** If Zoho does not state a value, render an em dash (`—`) or omit the row. Do not infer, estimate, or carry over a value from a sibling series.
 - **Key Specs Rule:** cards show only series-level constants (frame, drive, control, power). Size-varying specs (spindle HP, working area, price) appear only in the comparison table and per-configuration cards.
 - **Tier badges (already decided):** Ridge = `ENTRY` / `badge-entry`; Ascent = `MID-RANGE` / `badge-mid`. Router display order is Ridge → Ascent → Summit → Summit ATC → Apex.
@@ -66,16 +70,21 @@ In `META`, update these two entries' `badge`/`cls` and add `keySpecs`, `bestFor`
       { label:'Power',   value:'220V single-phase' },
     ] },
   'Ascent Series': { badge:'MID-RANGE', cls:'badge-mid',
-    tagline:'Entry-Level CNC Router',
-    intro:'Runs on standard 110V household power — no industrial electrical service required. Welded steel base, aluminum extrusion gantry, FluidNC control. A real CNC platform, not a kit.',
-    bestFor:'Shops without 220V service that need a real CNC platform on a standard household outlet.',
+    tagline:'Steel-Base CNC Router',
+    intro:'Welded steel lower frame with an aluminum extrusion gantry, straight-tooth rack-and-pinion drive, and FluidNC control. A real CNC platform, not a kit.',
+    bestFor:'Small shops wanting a welded steel base and straightforward FluidNC control.',
     image: null,
     keySpecs: [
       { label:'Frame',   value:'Welded steel base, aluminum gantry' },
       { label:'Drive',   value:'Straight-tooth rack & pinion (X/Y)' },
       { label:'Control', value:'FluidNC' },
-      { label:'Power',   value:'110V single-phase' },
+      { label:'Power',   value:'220V single-phase' },
     ] },
+```
+
+**Override #3 applies here.** The previous `tagline`, `intro`, `bestFor`, and `Power` all asserted 110V / household-outlet operation, which the owner has confirmed is false. Every one of those four fields changed. Do not restore the 110V wording from the existing file — the existing file is what is wrong.
+
+```js
 ```
 
 - [ ] **Step 2: Add the same fields to the three remaining router series**
@@ -112,7 +121,7 @@ In `META`, update these two entries' `badge`/`cls` and add `keySpecs`, `bestFor`
       { label:'Frame',   value:'Fully welded steel' },
       { label:'Motors',  value:'1500W AC servo, closed loop' },
       { label:'Control', value:'Centroid CNC12' },
-      { label:'Power',   value:'220V single-phase' },
+      { label:'Power',   value:'220V three-phase' },
     ] },
 ```
 
@@ -268,17 +277,21 @@ git commit -m "Add PhotoSlot component with branded empty state"
 - Consumes: nothing.
 - Produces: `<TrustBand />` — takes no props, renders four fixed items.
 
-Claims must be limited to what is verifiable from the Zoho catalog and existing site content: every machine description states "1-Year Limited Warranty" and "Remote technical support included"; financing has a live page; pricing is published on the site. Do **not** add claims like "free shipping" or "lifetime support".
+Claims must be limited to what is verifiable from the Zoho catalog and existing site content: every machine description states "1-Year Limited Warranty"; financing has a live page; pricing is published on the site; and "any size, any feature" is the owner's stated core positioning for custom builds. Do **not** add claims like "free shipping" or "lifetime support".
+
+**Owner decision (2026-09-01):** the third slot is the custom-build differentiator, **not** setup/training. The owner explicitly asked that support messaging be de-emphasized site-wide, so a support-flavored claim must not occupy prime space on every machine page.
+
+The border color `#2a2a2a` matches the existing `.navbar` / `.topbar` dark-section borders already in `global.css` — use that rather than introducing a new rgba value.
 
 - [ ] **Step 1: Create the component**
 
 ```astro
 ---
 const items = [
-  { label: 'Published Pricing',   detail: 'Real prices, not "call for quote"' },
-  { label: '1-Year Warranty',     detail: 'Included on every machine' },
-  { label: 'Setup & Training',    detail: 'We get you cutting' },
-  { label: 'Financing Available', detail: 'For qualified buyers' },
+  { label: 'Published Pricing',    detail: 'Real prices, not "call for quote"' },
+  { label: '1-Year Warranty',      detail: 'Included on every machine' },
+  { label: 'Any Size, Any Feature', detail: 'Custom-built to your spec' },
+  { label: 'Financing Available',  detail: 'For qualified buyers' },
 ];
 ---
 <div class="trust-band">
@@ -296,7 +309,7 @@ const items = [
 - [ ] **Step 2: Add styles**
 
 ```css
-.trust-band { background: var(--dark-2); border-bottom: 1px solid rgba(255,255,255,0.08); }
+.trust-band { background: var(--dark-2); border-bottom: 1px solid #2a2a2a; }
 .trust-band-inner {
   display: grid; grid-template-columns: repeat(4, 1fr);
   gap: 16px; padding-top: 18px; padding-bottom: 18px;
@@ -779,9 +792,20 @@ Every correction below comes from the spec's Data Corrections table. The Apex AT
 
 - Ascent `Spindle HP`: `2HP` → `2.5HP`
 - Summit `Spindle HP`: `4HP` → `3HP`
-- Apex `Power Requirement`: `220V 3-Phase` → `220V Single Phase`
+- Ascent `Power Requirement`: `110V` → `220V Single Phase` (override #3)
+- Apex `Power Requirement`: **leave `220V 3-Phase` unchanged** (override #2 — the existing copy is correct)
 - Summit `Vacuum Table`: `✓ 6-Zone` → `✓ Full`
 - Apex `Vacuum Table`: `✓ 6-Zone` → `✓ Yes`
+
+- [ ] **Step 4b: Remove the false 110V claims (override #3 — highest priority)**
+
+Search the whole `src/` tree, not just the homepage, and remove or correct every Ascent 110V / household-power / no-electrician claim:
+
+```bash
+grep -rniE "110V|household power|household outlet|no electrician|without an electrician" src/
+```
+
+Known locations: the Ascent package card's `Standard household power (110V)` feature bullet (replace with `220V Single-Phase Power`), and any equivalent phrasing on `src/pages/faq.astro` and `src/pages/about.astro`. The `CO2 Laser Series` keySpecs legitimately mention 110V — laser specs are unaffected by this override, so leave them alone.
 
 - [ ] **Step 5: Reconcile the Ascent package card label**
 
@@ -849,17 +873,31 @@ const res = await fetch(
 );
 const { items = [] } = await res.json();
 
+const existing = JSON.parse(fs.readFileSync('src/lib/machine_catalog.json', 'utf8'));
+
+// `line` values in the existing file are hand-assigned (e.g. 'Summit', 'BoreLine',
+// 'Plasma') and are NOT derivable from the SKU — deriving them would silently
+// change them and break findMachinesByLine() in netlify/functions/chat.mjs.
+// Preserve the existing value per item; only fall back for genuinely new items.
+const lineBySku = Object.fromEntries(existing.machines.map(m => [m.sku, m.line]));
+const lineByName = Object.fromEntries(existing.machines.map(m => [m.name, m.line]));
+
 const KEYWORDS = ['SPARK','ION','PRIME','ASCENT','RIDGE','SUMMIT','APEX','BORELINE'];
 const machines = items
   .filter(i => KEYWORDS.some(k => i.name.toUpperCase().includes(k)))
-  .map(i => ({
-    item_id: i.item_id, name: i.name, sku: i.sku, price: i.rate,
-    description: i.description, status: i.status,
-    product_type: i.product_type, line: i.sku?.split('-')[1] ?? '',
-  }));
+  .map(i => {
+    const line = lineBySku[i.sku] ?? lineByName[i.name] ?? null;
+    if (line === null) {
+      console.warn(`NEW ITEM with no known line: ${i.name} (${i.sku}) — assign its line manually before committing.`);
+    }
+    return {
+      item_id: i.item_id, name: i.name, sku: i.sku, price: i.rate,
+      description: i.description, status: i.status,
+      product_type: i.product_type, line: line ?? '',
+    };
+  });
 
 // Laser items are placeholder-only and live in laser_catalog.json; preserve them.
-const existing = JSON.parse(fs.readFileSync('src/lib/machine_catalog.json', 'utf8'));
 const lasers = existing.machines.filter(m => String(m.line).startsWith('LASER'));
 
 fs.writeFileSync('src/lib/machine_catalog.json',
