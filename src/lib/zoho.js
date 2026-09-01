@@ -152,7 +152,10 @@ export function getSeries(name) {
   if (name.includes('Prime'))  return 'Prime Series';
   if (name.includes('Ascent')) return 'Ascent Series';
   if (name.includes('Ridge'))  return 'Ridge Series';
-  if (name.includes('Summit ATC'))   return 'Summit ATC';
+  // Any Summit with a tool changer belongs to the ATC series — this also
+  // catches "Summit PRO ATC 5X10", which would otherwise fall through to
+  // Summit Series and render as a plain size next to the ATC card.
+  if (/summit/i.test(name) && name.includes('ATC')) return 'Summit ATC';
   if (name.includes('Summit Lathe')) return 'Summit Lathe';
   if (name.includes('Summit') || name.includes('SUMMIT')) return 'Summit Series';
   if (name.includes('Apex')   || name.includes('APEX'))   return 'Apex Series';
