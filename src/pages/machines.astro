@@ -12,6 +12,7 @@ import {
 import { META, slugForSeries, laserSlugForSeries } from '../lib/machine_meta.js';
 import MachineCard from '../components/MachineCard.astro';
 import TrustBand from '../components/TrustBand.astro';
+import RouterComparison from '../components/RouterComparison.astro';
 
 const items = await fetchZohoItems();
 const { plasma, routers, specialty } = categorizeMachines(items);
@@ -90,6 +91,13 @@ const laserSeries  = ['CO2 Laser Series','Fiber Laser Series'].filter(s => laser
             featured={seriesKey === 'Summit Series'}
           />
         ))}
+      </div>
+
+      <div style="margin-top: 56px;">
+        <p class="section-label">Compare</p>
+        <h3 class="section-title" style="font-size: 1.8rem;">Router Comparison</h3>
+        <div class="title-rule"></div>
+        <RouterComparison series={routerSeries} bySeries={routerByS} />
       </div>
     </div>
   </section>

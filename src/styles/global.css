@@ -1291,6 +1291,14 @@ a { color: inherit; text-decoration: none; }
 .comp-table tr:nth-child(even) td { background: var(--light); }
 .comp-table tr:nth-child(even) td.popular-col { background: rgba(26,110,216,0.1); }
 
+@media (max-width: 800px) {
+  .comp-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .comp-table { min-width: 680px; }
+  .comp-table td:first-child, .comp-table th:first-child {
+    position: sticky; left: 0; background: var(--white); z-index: 1;
+  }
+}
+
 /* ==========================================
    FINANCING BANNER
    ========================================== */

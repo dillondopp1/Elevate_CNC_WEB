@@ -1,0 +1,73 @@
+---
+/**
+ * Side-by-side router comparison table, rendered below the router card grid
+ * on /machines. Reuses the .comp-table styling already established on the
+ * homepage (src/pages/index.astro) for visual consistency.
+ *
+ * Pricing/monthly/sizes come straight from live Zoho data via the same
+ * helpers the cards use — never hardcoded, never "corrected".
+ *
+ * Spec rows come from META[...].keySpecs (src/lib/machine_meta.js) —
+ * series-level constants, not parsed from Zoho description text. Series
+ * legitimately carry different spec labels (e.g. Ridge has Drive, Summit ATC
+ * has Spindle); the row set is the union of labels across the series being
+ * compared, in the order they first appear. Any series missing a given
+ * label renders an em-dash for that cell rather than guessing.
+ */
+import { monthlyPayment, getSize } from '../lib/zoho.js';
+import { META } from '../lib/machine_meta.js';
+
+export interface Props {
+  series: string[];
+  bySeries: Record<string, any[]>;
+}
+const { series, bySeries } = Astro.props;
+
+const fmt = (n: number) => '$' + Number(n).toLocaleString('en-US');
+
+// Union of keySpecs labels across the compared series, preserving the
+// order the series appear in (cheapest to most expensive) and the order
+// labels first appear within each series' keySpecs array.
+const specLabels: string[] = [];
+series.forEach(s => {
+  (META[s]?.keySpecs || []).forEach(({ label }) => {
+    if (!specLabels.includes(label)) specLabels.push(label);
+  });
+});
+
+function specValue(s: string, label: string) {
+  const specs = META[s]?.keySpecs || [];
+  const found = specs.find((sp: { label: string; value: string }) => sp.label === label);
+  return found ? found.value : '—';
+}
+---
+<div class="comp-table-wrap">
+  <table class="comp-table">
+    <thead>
+      <tr>
+        <th>Feature</th>
+        {series.map(s => <th>{s.replace(' Series', '')}</th>)}
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Starting Price</td>
+        {series.map(s => <td>{fmt(Math.min(...bySeries[s].map((v: any) => v.rate)))}</td>)}
+      </tr>
+      <tr>
+        <td>Est. Monthly</td>
+        {series.map(s => <td>{fmt(monthlyPayment(Math.min(...bySeries[s].map((v: any) => v.rate))))}/mo</td>)}
+      </tr>
+      <tr>
+        <td>Sizes</td>
+        {series.map(s => <td>{bySeries[s].map((v: any) => getSize(v.name)).join(', ')}</td>)}
+      </tr>
+      {specLabels.map(label => (
+        <tr>
+          <td>{label}</td>
+          {series.map(s => <td>{specValue(s, label)}</td>)}
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
