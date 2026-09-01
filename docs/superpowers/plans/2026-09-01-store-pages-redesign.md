@@ -849,17 +849,31 @@ const res = await fetch(
 );
 const { items = [] } = await res.json();
 
+const existing = JSON.parse(fs.readFileSync('src/lib/machine_catalog.json', 'utf8'));
+
+// `line` values in the existing file are hand-assigned (e.g. 'Summit', 'BoreLine',
+// 'Plasma') and are NOT derivable from the SKU — deriving them would silently
+// change them and break findMachinesByLine() in netlify/functions/chat.mjs.
+// Preserve the existing value per item; only fall back for genuinely new items.
+const lineBySku = Object.fromEntries(existing.machines.map(m => [m.sku, m.line]));
+const lineByName = Object.fromEntries(existing.machines.map(m => [m.name, m.line]));
+
 const KEYWORDS = ['SPARK','ION','PRIME','ASCENT','RIDGE','SUMMIT','APEX','BORELINE'];
 const machines = items
   .filter(i => KEYWORDS.some(k => i.name.toUpperCase().includes(k)))
-  .map(i => ({
-    item_id: i.item_id, name: i.name, sku: i.sku, price: i.rate,
-    description: i.description, status: i.status,
-    product_type: i.product_type, line: i.sku?.split('-')[1] ?? '',
-  }));
+  .map(i => {
+    const line = lineBySku[i.sku] ?? lineByName[i.name] ?? null;
+    if (line === null) {
+      console.warn(`NEW ITEM with no known line: ${i.name} (${i.sku}) — assign its line manually before committing.`);
+    }
+    return {
+      item_id: i.item_id, name: i.name, sku: i.sku, price: i.rate,
+      description: i.description, status: i.status,
+      product_type: i.product_type, line: line ?? '',
+    };
+  });
 
 // Laser items are placeholder-only and live in laser_catalog.json; preserve them.
-const existing = JSON.parse(fs.readFileSync('src/lib/machine_catalog.json', 'utf8'));
 const lasers = existing.machines.filter(m => String(m.line).startsWith('LASER'));
 
 fs.writeFileSync('src/lib/machine_catalog.json',
