@@ -124,7 +124,7 @@ const TOOL_DEFINITIONS = [
   { name: 'get_machine_catalog', description: 'Return all Elevate CNC machines with name, SKU, price, and line.', input_schema: { type: 'object', properties: {}, required: [] } },
   { name: 'get_machine_details', description: 'Get full details for a machine by SKU.', input_schema: { type: 'object', properties: { sku: { type: 'string', description: 'Machine SKU' } }, required: ['sku'] } },
   { name: 'find_machines_by_budget', description: 'Find machines within a budget range.', input_schema: { type: 'object', properties: { max_budget: { type: 'number' }, min_budget: { type: 'number' } }, required: ['max_budget'] } },
-  { name: 'find_machines_by_line', description: 'Get all machines in a product line (APEX, Summit, Ridge, Ascent, Prime, ION, Spark, Plasma).', input_schema: { type: 'object', properties: { product_line: { type: 'string' } }, required: ['product_line'] } },
+  { name: 'find_machines_by_line', description: 'Get all machines in a product line. Valid values: APEX, SUMMIT, Ridge, ASCENT, Prime, ION, SPARK, BORELINE, LASER-CO2, LASER-FIBER.', input_schema: { type: 'object', properties: { product_line: { type: 'string' } }, required: ['product_line'] } },
   { name: 'lookup_contact', description: 'Check if a contact exists in HubSpot by email.', input_schema: { type: 'object', properties: { email: { type: 'string' } }, required: ['email'] } },
   { name: 'create_contact', description: 'Create a new HubSpot contact.', input_schema: { type: 'object', properties: { firstname: { type: 'string' }, lastname: { type: 'string' }, email: { type: 'string' }, phone: { type: 'string' }, company: { type: 'string' }, state: { type: 'string' } }, required: ['firstname', 'lastname', 'email'] } },
   { name: 'create_deal', description: 'Create a deal in HubSpot and associate with a contact.', input_schema: { type: 'object', properties: { deal_name: { type: 'string' }, contact_id: { type: 'string' }, stage_id: { type: 'string' }, amount: { type: 'number' }, machine_interest: { type: 'string' }, qualification_notes: { type: 'string' } }, required: ['deal_name', 'contact_id', 'stage_id'] } },
@@ -189,7 +189,12 @@ Collect these — but do NOT block CRM entry waiting for all of them. Create con
 - Entry / small shop ($7k-$10k): Ascent or Ridge
 - Production shop ($18k-$25k): Summit 4x4/4x8, Summit 6x12, or Summit ATC
 - Large production ($28k+): APEX series
+- Non-metal cutting/engraving (wood, acrylic, leather): CO2 Laser Series
+- Metal marking/cutting: Fiber Laser Series
 - Plasma (not actively marketed, but quotable if asked): Spark (<$2k), ION/Prime ($3k-$4.5k)
+
+## Laser Pricing Disclaimer
+Laser System prices (CO2 Laser Series, Fiber Laser Series) are PRELIMINARY placeholders, not final. When quoting a laser price, always add a short note like "that's a preliminary figure — I'll get you exact pricing" and still log the deal normally. Do not add this disclaimer for routers or plasma — their prices are final.
 
 ## Pipeline Stage IDs
 - Initial Inquiry: 3372444347

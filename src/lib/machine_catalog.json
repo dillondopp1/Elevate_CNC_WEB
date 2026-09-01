@@ -199,6 +199,46 @@
       "status": "active",
       "product_type": "goods",
       "line": "Plasma"
+    },
+    {
+      "item_id": "laser-co2-24",
+      "name": "Elevate CNC CO2 Laser 2x2",
+      "sku": "ECN-LASER-CO2-24",
+      "price": 3800,
+      "description": "Elevate CNC CO2 Laser Series – Entry CO2 Laser Cutter/Engraver (2×2)\n\nThe CO2 Laser Series cuts and engraves wood, acrylic, leather, fabric, and other non-metals. A compact, sealed CO2 tube system built for makers, sign shops, and small production runs that need clean edges without the setup of a router.\n\nIncluded Features\n\nSealed CO2 laser tube, air- and water-cooled\n\nEnclosed cutting bed with safety interlocks\n\nRed-dot pointer for job alignment\n\nHoneycomb cutting bed\n\nExhaust fan and ducting included\n\nControlled by LightBurn-compatible laser control software\n\nWorking Area\n\nX Axis: 24 in\n\nY Axis: 24 in\n\nZ Axis Travel: 8 in\n\nPerformance\n\nLaser Power: 60W\n\nEngraving Speed: up to 400 mm/s\n\nElectrical Requirements\n\n110V single-phase\n\nStandard household outlet\n\nWarranty & Support\n\n1-Year Limited Warranty\n\nRemote technical support included",
+      "status": "active",
+      "product_type": "goods",
+      "line": "LASER-CO2"
+    },
+    {
+      "item_id": "laser-co2-48",
+      "name": "Elevate CNC CO2 Laser 4x4",
+      "sku": "ECN-LASER-CO2-48",
+      "price": 6200,
+      "description": "Elevate CNC CO2 Laser Series – Production CO2 Laser Cutter/Engraver (4×4)\n\nThe CO2 Laser Series cuts and engraves wood, acrylic, leather, fabric, and other non-metals. This larger-bed configuration is built for sign shops and small manufacturers running daily production jobs.\n\nIncluded Features\n\nSealed CO2 laser tube, water-cooled with chiller\n\nEnclosed cutting bed with safety interlocks\n\nMotorized Z-axis with auto-focus\n\nPass-through doors for oversized material\n\nHoneycomb and honeycomb/slat combo bed\n\nControlled by LightBurn-compatible laser control software\n\nWorking Area\n\nX Axis: 48 in\n\nY Axis: 48 in\n\nZ Axis Travel: 12 in\n\nPerformance\n\nLaser Power: 100W\n\nEngraving Speed: up to 500 mm/s\n\nElectrical Requirements\n\n220V single-phase\n\nDedicated 20A circuit recommended\n\nWarranty & Support\n\n1-Year Limited Warranty\n\nRemote technical support included",
+      "status": "active",
+      "product_type": "goods",
+      "line": "LASER-CO2"
+    },
+    {
+      "item_id": "laser-fiber-mark",
+      "name": "Elevate CNC Fiber Laser Marking",
+      "sku": "ECN-LASER-FIBER-MARK",
+      "price": 9500,
+      "description": "Elevate CNC Fiber Laser Series – Compact Fiber Marking Station\n\nThe Fiber Laser Series marks and engraves metal, anodized aluminum, and select plastics — permanent, high-contrast marking for parts, tools, and branding with no consumables.\n\nIncluded Features\n\nSealed fiber laser source, air-cooled\n\nEnclosed marking chamber with safety glass\n\nAdjustable work table with clamping fixtures\n\nRed-dot pointer for job alignment\n\nControlled by EZCad-compatible marking software\n\nWorking Area\n\nMarking Field: 12 in x 12 in\n\nZ Axis Travel: 6 in\n\nPerformance\n\nLaser Power: 30W\n\nMarking Speed: up to 7,000 mm/s\n\nElectrical Requirements\n\n110V single-phase\n\nStandard household outlet\n\nWarranty & Support\n\n1-Year Limited Warranty\n\nRemote technical support included",
+      "status": "active",
+      "product_type": "goods",
+      "line": "LASER-FIBER"
+    },
+    {
+      "item_id": "laser-fiber-cut-48",
+      "name": "Elevate CNC Fiber Laser Cutting 4x4",
+      "sku": "ECN-LASER-FIBER-CUT-48",
+      "price": 22000,
+      "description": "Elevate CNC Fiber Laser Series – Production Fiber Cutting Table (4×4)\n\nThe Fiber Laser Series cuts sheet metal — mild steel, stainless, aluminum, brass, and copper — with a clean, fast, no-contact cut. Built for metal fabricators who need precision without secondary finishing.\n\nIncluded Features\n\nSealed fiber laser source, water-cooled\n\nWelded steel frame with slat cutting bed\n\nAutomatic focus height control\n\nNitrogen/oxygen-assist gas system compatible\n\nExhaust and fume extraction ready\n\nControlled by Cypcut-compatible cutting control software\n\nWorking Area\n\nX Axis: 48 in\n\nY Axis: 48 in\n\nPerformance\n\nLaser Power: 1000W\n\nMax Cutting Speed: up to 25,000 mm/min (material dependent)\n\nMax Steel Cutting Thickness: 0.5 in (material dependent)\n\nElectrical Requirements\n\n220V three-phase\n\nDedicated 30A circuit required\n\nCompressed air / assist gas required\n\nWarranty & Support\n\n1-Year Limited Warranty\n\nRemote technical support included",
+      "status": "active",
+      "product_type": "goods",
+      "line": "LASER-FIBER"
     }
   ],
   "accessories": [

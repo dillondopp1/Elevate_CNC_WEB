@@ -11,6 +11,8 @@ export const META = {
   'Apex Series':   { badge:'INDUSTRIAL',  cls:'badge-industrial', tagline:'Industrial Production CNC Router',    intro:'1500W AC servo motors with closed-loop feedback, 12HP spindle, 1,200 IPM rapid speed, centralized auto-lubrication, and Centroid CNC12. The flagship router in the Elevate CNC lineup.' },
   'BoreLine':      { badge:'SPECIALTY',   cls:'badge-specialty',  tagline:'Double-Head Side Hole Drilling',      intro:'Purpose-built for production cabinet and furniture shops. Dual 3HP horizontal spindles, laser probe positioning, barcode scanning, and pneumatic material clamping. 110 in operating stroke.' },
   'Summit Lathe':  { badge:'SPECIALTY',   cls:'badge-specialty',  tagline:'CNC Wood Lathe',                      intro:'One-piece cast iron bed with Taiwan Hiwin rails, TBI ballscrews, and a 7.4HP main motor. Optional lengths to 118 in. Designed for furniture makers, stair builders, and column shops.' },
+  'CO2 Laser Series':   { badge:'ENTRY',      cls:'badge-entry', tagline:'CO2 Laser Cutter & Engraver',     intro:'Cuts and engraves wood, acrylic, leather, fabric, and other non-metals. A sealed CO2 tube system built for makers, sign shops, and small production runs that need clean edges without router setup.' },
+  'Fiber Laser Series': { badge:'PRODUCTION',  cls:'badge-pro',    tagline:'Fiber Laser Marking & Cutting',   intro:'Marks and cuts metal — mild steel, stainless, aluminum, and more — with a clean, fast, no-contact process. No consumables, no secondary finishing.' },
 };
 
 /** Router series get individual detail pages at /machines/{slug}. */
@@ -22,6 +24,16 @@ export const ROUTER_SLUGS = {
   'apex': 'Apex Series',
 };
 
+/** Laser series get individual detail pages at /machines/laser/{slug}. */
+export const LASER_SLUGS = {
+  'co2': 'CO2 Laser Series',
+  'fiber': 'Fiber Laser Series',
+};
+
 export function slugForSeries(seriesName) {
   return Object.keys(ROUTER_SLUGS).find(slug => ROUTER_SLUGS[slug] === seriesName) || null;
+}
+
+export function laserSlugForSeries(seriesName) {
+  return Object.keys(LASER_SLUGS).find(slug => LASER_SLUGS[slug] === seriesName) || null;
 }

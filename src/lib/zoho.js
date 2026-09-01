@@ -7,10 +7,21 @@
  * Falls back to zoho_cache.json if the API is unreachable.
  */
 import _fallbackData from './zoho_cache.json';
+import _laserCatalog from './laser_catalog.json';
 
 let _itemCache = null;
 let _cacheAt   = 0;
 const CACHE_TTL = 10 * 60 * 1000; // 10 minutes
+
+/**
+ * Laser Systems aren't in Zoho yet — this is a hand-maintained placeholder
+ * catalog (src/lib/laser_catalog.json) in the same shape as a Zoho item, so
+ * it drops straight into categorizeMachines()/groupBySeries() alongside
+ * live-fetched routers and plasma tables.
+ */
+export function getLaserItems() {
+  return _laserCatalog.machines;
+}
 
 export async function fetchZohoItems() {
   if (_itemCache && Date.now() - _cacheAt < CACHE_TTL) {
@@ -146,6 +157,8 @@ export function getSeries(name) {
   if (name.includes('Summit') || name.includes('SUMMIT')) return 'Summit Series';
   if (name.includes('Apex')   || name.includes('APEX'))   return 'Apex Series';
   if (name.includes('BoreLine')) return 'BoreLine';
+  if (name.includes('CO2 Laser'))   return 'CO2 Laser Series';
+  if (name.includes('Fiber Laser')) return 'Fiber Laser Series';
   return '';
 }
 
@@ -153,6 +166,7 @@ export function getMachineType(name) {
   if (name.includes('Spark') || name.includes('ION') || name.includes('Prime')) return 'CNC Plasma Table';
   if (name.includes('Lathe'))    return 'CNC Wood Lathe';
   if (name.includes('BoreLine')) return 'Side Hole Drilling';
+  if (name.includes('CO2 Laser') || name.includes('Fiber Laser')) return 'Laser System';
   return 'CNC Router';
 }
 
@@ -165,6 +179,7 @@ export function getSize(name) {
   if (name.includes('BoreLine')) return 'DH';
   if (name.includes('Prime'))    return '4×4';
   if (name.includes('ION'))      return '4×4';
+  if (name.includes('Marking'))  return 'Marking';
   return getDisplayName(name);
 }
 
