@@ -167,3 +167,40 @@ export function getSize(name) {
   if (name.includes('ION'))      return '4×4';
   return getDisplayName(name);
 }
+
+const HEADER_PATTERN = /^(?:[A-Z][A-Za-z/]*|&)(?:\s(?:[A-Z][A-Za-z/]*|&))*$/;
+
+function looksLikeHeader(line) {
+  if (line.length > 40 || /[.:0-9]/.test(line)) return false;
+  return HEADER_PATTERN.test(line);
+}
+
+/**
+ * Parses a Zoho item's free-text description (blocks separated by blank
+ * lines) into { title, sections: [{ heading, items[] }] } for display on a
+ * machine detail page. Falls back gracefully on unstructured text.
+ */
+export function parseSpecSections(description) {
+  if (!description) return { title: '', sections: [] };
+
+  const blocks = description.split(/\n\s*\n/).map(b => b.trim()).filter(Boolean);
+  if (!blocks.length) return { title: '', sections: [] };
+
+  const title = blocks[0];
+  const sections = [];
+  let current = null;
+
+  for (const block of blocks.slice(1)) {
+    if (looksLikeHeader(block)) {
+      current = { heading: block, items: [] };
+      sections.push(current);
+    } else if (current) {
+      current.items.push(block);
+    } else {
+      current = { heading: 'Overview', items: [block] };
+      sections.push(current);
+    }
+  }
+
+  return { title, sections };
+}

@@ -1,0 +1,23 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Page Not Found" description="Page not found — Elevate CNC.">
+
+  <section style="padding: 120px 24px; background: var(--dark); min-height: 60vh; display: flex; align-items: center;">
+    <div class="container text-center">
+      <p class="section-label" style="justify-content: center; display: flex;">// 404</p>
+      <h1 class="section-title white" style="font-size: clamp(2.4rem, 6vw, 4rem);">Page Not Found</h1>
+      <div class="title-rule" style="margin: 0 auto 24px;"></div>
+      <p class="section-sub" style="color: #aaa; max-width: 480px; margin: 0 auto;">
+        That page doesn't exist, or it moved. Try one of these instead.
+      </p>
+      <div style="display:flex; gap:16px; flex-wrap:wrap; justify-content:center; margin-top:36px;">
+        <a href="/" class="btn btn-primary">Home</a>
+        <a href="/machines" class="btn btn-outline">Shop Machines</a>
+        <a href="/#contact" class="btn btn-outline">Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>

@@ -1,0 +1,120 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="About" description="About Elevate CNC — industrial CNC routers built to any size and spec, based in Shelley, Idaho.">
+
+  <!-- Page Hero -->
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <p class="page-hero-label">// About Us</p>
+      <h1 class="page-hero-title">Built for Shops That<br />Need Something Specific</h1>
+      <p class="page-hero-sub">Shelley, Idaho — designed, built, and supported in the USA.</p>
+    </div>
+  </div>
+
+  <section style="padding: var(--section-pad) 24px;">
+    <div class="container">
+      <div class="about-grid">
+        <div>
+          <p class="section-label">Who We Are</p>
+          <h2 class="section-title">Industrial Machines, Priced for Real Shops</h2>
+          <div class="title-rule"></div>
+          <p class="about-copy">
+            Elevate CNC builds and sells industrial-grade CNC routers out of Shelley, Idaho —
+            welded steel frames, production spindles, and real vacuum hold-down, not hobby-grade
+            kits. We sell the standard sizes shops expect, but that's not where we're focused.
+          </p>
+          <p class="about-copy">
+            Our specialty is the machine that doesn't exist off the shelf: an 8×30 with ATC, a
+            table sized for a job nobody else will configure for, a spindle and drive system built
+            around what you're actually cutting. If a standard 4×8 router covers your shop, we'll
+            build you a great one at a fair price. If it doesn't, that's exactly the kind of
+            problem we like solving.
+          </p>
+          <p class="about-copy">
+            Every machine ships with setup, training, and the support to keep it running —
+            because a customer who comes back for their next machine is worth more than one who
+            never should have bought the first.
+          </p>
+        </div>
+        <div class="about-facts">
+          <div class="about-fact">
+            <span class="about-fact-label">Location</span>
+            <span class="about-fact-value">Shelley, Idaho</span>
+          </div>
+          <div class="about-fact">
+            <span class="about-fact-label">Focus</span>
+            <span class="about-fact-value">Custom &amp; production CNC routers</span>
+          </div>
+          <div class="about-fact">
+            <span class="about-fact-label">Build</span>
+            <span class="about-fact-value">Welded steel frames, industrial components</span>
+          </div>
+          <div class="about-fact">
+            <span class="about-fact-label">Support</span>
+            <span class="about-fact-value">Setup, training &amp; ongoing troubleshooting</span>
+          </div>
+          <div class="about-fact">
+            <span class="about-fact-label">Financing</span>
+            <span class="about-fact-value"><a href="/financing" style="color:var(--accent)">Available for qualified buyers →</a></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="padding: var(--section-pad); background: var(--dark);">
+    <div class="container text-center">
+      <p class="section-label">// Get Started</p>
+      <h2 class="section-title white">Tell Us What You're Building</h2>
+      <div class="title-rule"></div>
+      <p class="section-sub" style="color: #aaa;">
+        Standard size or something nobody else will build — tell us what your shop needs and we'll tell you exactly what it takes.
+      </p>
+      <a href="/#contact" class="btn btn-primary" style="margin-top: 32px;">Start the Conversation →</a>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 56px;
+    align-items: start;
+  }
+  .about-copy {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--text);
+    margin-top: 20px;
+  }
+  .about-facts {
+    background: var(--light);
+    border: 1px solid var(--border);
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .about-fact { display: flex; flex-direction: column; gap: 4px; }
+  .about-fact-label {
+    font-family: var(--font-head);
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+  }
+  .about-fact-value {
+    font-size: 0.95rem;
+    color: var(--dark);
+    font-weight: 600;
+  }
+  @media (max-width: 800px) {
+    .about-grid { grid-template-columns: 1fr; }
+  }
+</style>
