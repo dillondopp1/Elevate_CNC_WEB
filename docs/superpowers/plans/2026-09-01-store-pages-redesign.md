@@ -277,17 +277,21 @@ git commit -m "Add PhotoSlot component with branded empty state"
 - Consumes: nothing.
 - Produces: `<TrustBand />` — takes no props, renders four fixed items.
 
-Claims must be limited to what is verifiable from the Zoho catalog and existing site content: every machine description states "1-Year Limited Warranty" and "Remote technical support included"; financing has a live page; pricing is published on the site. Do **not** add claims like "free shipping" or "lifetime support".
+Claims must be limited to what is verifiable from the Zoho catalog and existing site content: every machine description states "1-Year Limited Warranty"; financing has a live page; pricing is published on the site; and "any size, any feature" is the owner's stated core positioning for custom builds. Do **not** add claims like "free shipping" or "lifetime support".
+
+**Owner decision (2026-09-01):** the third slot is the custom-build differentiator, **not** setup/training. The owner explicitly asked that support messaging be de-emphasized site-wide, so a support-flavored claim must not occupy prime space on every machine page.
+
+The border color `#2a2a2a` matches the existing `.navbar` / `.topbar` dark-section borders already in `global.css` — use that rather than introducing a new rgba value.
 
 - [ ] **Step 1: Create the component**
 
 ```astro
 ---
 const items = [
-  { label: 'Published Pricing',   detail: 'Real prices, not "call for quote"' },
-  { label: '1-Year Warranty',     detail: 'Included on every machine' },
-  { label: 'Setup & Training',    detail: 'We get you cutting' },
-  { label: 'Financing Available', detail: 'For qualified buyers' },
+  { label: 'Published Pricing',    detail: 'Real prices, not "call for quote"' },
+  { label: '1-Year Warranty',      detail: 'Included on every machine' },
+  { label: 'Any Size, Any Feature', detail: 'Custom-built to your spec' },
+  { label: 'Financing Available',  detail: 'For qualified buyers' },
 ];
 ---
 <div class="trust-band">
@@ -305,7 +309,7 @@ const items = [
 - [ ] **Step 2: Add styles**
 
 ```css
-.trust-band { background: var(--dark-2); border-bottom: 1px solid rgba(255,255,255,0.08); }
+.trust-band { background: var(--dark-2); border-bottom: 1px solid #2a2a2a; }
 .trust-band-inner {
   display: grid; grid-template-columns: repeat(4, 1fr);
   gap: 16px; padding-top: 18px; padding-bottom: 18px;
