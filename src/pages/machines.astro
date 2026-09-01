@@ -4,10 +4,7 @@ import {
   fetchZohoItems,
   categorizeMachines,
   getLaserItems,
-  monthlyPayment,
-  getWorkingArea,
   getSeries,
-  getSize,
 } from '../lib/zoho.js';
 import { META, slugForSeries, laserSlugForSeries } from '../lib/machine_meta.js';
 import MachineCard from '../components/MachineCard.astro';
@@ -19,10 +16,6 @@ const { plasma, routers, specialty } = categorizeMachines(items);
 const lasers = getLaserItems();
 
 /* ── Helpers ─────────────────────────────────────── */
-function fmt(n) {
-  return '$' + Number(n).toLocaleString('en-US');
-}
-
 function groupBySeries(machines) {
   const map = {};
   machines.forEach(m => {
@@ -53,7 +46,7 @@ const laserSeries  = ['CO2 Laser Series','Fiber Laser Series'].filter(s => laser
     <div class="page-hero-inner">
       <p class="page-hero-label">// Full Machine Lineup</p>
       <h1 class="page-hero-title">Find Your Machine</h1>
-      <p class="page-hero-sub">Every series, with sizes and pricing — all pulled live from our inventory.</p>
+      <p class="page-hero-sub">Every series, with sizes and pricing — the full lineup in one place.</p>
     </div>
   </div>
 
@@ -135,7 +128,7 @@ const laserSeries  = ['CO2 Laser Series','Fiber Laser Series'].filter(s => laser
       <p class="section-label">Plasma Tables</p>
       <h2 class="section-title">Cut Steel, Aluminum & Sheet Metal</h2>
       <div class="title-rule"></div>
-      <p class="section-sub">Three tiers — from compact garage tables to production shop setups.</p>
+      <p class="section-sub">From compact garage tables to production shop setups.</p>
 
       <div class="machine-grid">
         {plasmaSeries.map(seriesKey => (
@@ -207,7 +200,7 @@ const laserSeries  = ['CO2 Laser Series','Fiber Laser Series'].filter(s => laser
   <!-- Financing footnote -->
   <div style="background: var(--light); padding: 16px 24px; text-align: center;">
     <p style="font-size: 0.8rem; color: var(--text-muted);">
-      *Monthly payment estimates based on 60-month term at ~8% APR. Subject to credit approval. Contact us for financing details.
+      Monthly payment estimates assume a 60-month term at ~8% APR. Subject to credit approval. Contact us for financing details.
     </p>
   </div>
 

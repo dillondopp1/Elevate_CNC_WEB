@@ -31,11 +31,15 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 const DRY_RUN = process.argv.includes('--dry-run');
 
-const CATALOG_PATH = path.join('src', 'lib', 'machine_catalog.json');
-const ENV_PATH = '.env';
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const REPO_ROOT = path.resolve(__dirname, '..');
+
+const CATALOG_PATH = path.join(REPO_ROOT, 'src', 'lib', 'machine_catalog.json');
+const ENV_PATH = path.join(REPO_ROOT, '.env');
 
 const REQUIRED_ENV_KEYS = [
   'ZOHO_CLIENT_ID',

@@ -30,30 +30,30 @@ function compareValue(s: string, row: string) {
   return value ? value : '—';
 }
 ---
-<div class="comp-table-wrap">
+<div class="comp-table-wrap" tabindex="0" role="region" aria-label="Router comparison">
   <table class="comp-table">
     <thead>
       <tr>
-        <th>Feature</th>
-        {series.map(s => <th>{s.replace(' Series', '')}</th>)}
+        <th scope="col">Feature</th>
+        {series.map(s => <th scope="col">{s.replace(' Series', '')}</th>)}
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>Starting Price</td>
+        <th scope="row" class="comp-row-label">Starting Price</th>
         {series.map(s => <td>{fmt(Math.min(...bySeries[s].map((v: any) => v.rate)))}</td>)}
       </tr>
       <tr>
-        <td>Est. Monthly</td>
+        <th scope="row" class="comp-row-label">Est. Monthly</th>
         {series.map(s => <td>{fmt(monthlyPayment(Math.min(...bySeries[s].map((v: any) => v.rate))))}/mo</td>)}
       </tr>
       <tr>
-        <td>Sizes</td>
+        <th scope="row" class="comp-row-label">Sizes</th>
         {series.map(s => <td>{bySeries[s].map((v: any) => getSize(v.name)).join(', ')}</td>)}
       </tr>
       {COMPARE_ROWS.map(row => (
         <tr>
-          <td>{row}</td>
+          <th scope="row" class="comp-row-label">{row}</th>
           {series.map(s => <td>{compareValue(s, row)}</td>)}
         </tr>
       ))}

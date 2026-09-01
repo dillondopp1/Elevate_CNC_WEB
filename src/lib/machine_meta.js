@@ -99,6 +99,7 @@ export const META = {
     keySpecs: [
       { label:'Frame',   value:'Fully welded steel' },
       { label:'Motors',  value:'1500W AC servo, closed loop' },
+      { label:'Tool Change', value:'Automatic' },
       { label:'Control', value:'Centroid CNC12' },
       { label:'Power',   value:'220V three-phase' },
     ],
